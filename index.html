@@ -457,6 +457,8 @@
     document.getElementById('studyTitle').textContent = `Lecture ${lec.id}: ${lec.title}`;
     document.getElementById('studySubtitle').textContent = lec.titleVi;
     renderStudyContent();
+    // Scroll to top of main content
+    document.querySelector('.main-content').scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   // Language toggle
@@ -511,6 +513,34 @@
       div.innerHTML = `<h3>${heading}</h3><div>${content}</div>${keyTermsHtml}`;
       container.appendChild(div);
     });
+
+    // Add Previous / Next navigation buttons
+    const lecIndex = LECTURES.findIndex(l => l.id === lec.id);
+    const prevLec = lecIndex > 0 ? LECTURES[lecIndex - 1] : null;
+    const nextLec = lecIndex < LECTURES.length - 1 ? LECTURES[lecIndex + 1] : null;
+
+    const navDiv = document.createElement('div');
+    navDiv.className = 'study-nav-buttons';
+    navDiv.innerHTML = `
+      ${prevLec
+        ? `<button class="btn btn-secondary study-nav-btn" id="studyPrevBtn">
+             ← Previous<br><span class="study-nav-label">L${prevLec.id}: ${prevLec.title}</span>
+           </button>`
+        : '<div></div>'}
+      ${nextLec
+        ? `<button class="btn btn-primary study-nav-btn" id="studyNextBtn">
+             Next →<br><span class="study-nav-label">L${nextLec.id}: ${nextLec.title}</span>
+           </button>`
+        : '<div></div>'}
+    `;
+    container.appendChild(navDiv);
+
+    if (prevLec) {
+      document.getElementById('studyPrevBtn').addEventListener('click', () => openStudyLecture(prevLec.id));
+    }
+    if (nextLec) {
+      document.getElementById('studyNextBtn').addEventListener('click', () => openStudyLecture(nextLec.id));
+    }
   }
 
   // ========== QUIZ MODE ==========
