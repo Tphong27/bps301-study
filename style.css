@@ -6,22 +6,22 @@
 
 /* --- CSS Variables --- */
 :root {
-  --bg-primary: #f5f8ff;
+  --bg-primary: #f7f8fc;
   --bg-secondary: #ffffff;
   --bg-card: #ffffff;
-  --bg-card-hover: #f1f5ff;
+  --bg-card-hover: #f1f4fa;
   --bg-glass: rgba(255, 255, 255, 0.75);
-  --bg-input: #eef3ff;
+  --bg-input: #eef2f8;
   --border: rgba(17, 24, 39, 0.08);
   --border-active: rgba(79, 111, 255, 0.35);
 
-  --text-primary: #1f2937;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
-  --text-heading: #0f172a;
+  --text-primary: #111827;
+  --text-secondary: #334155;
+  --text-muted: #5b6b82;
+  --text-heading: #0b1220;
 
   --accent: #6384ff;
-  --accent-light: #7e9bff;
+  --accent-light: #4f6fff;
   --accent-glow: rgba(99, 132, 255, 0.12);
   --accent-gradient: linear-gradient(135deg, #6384ff, #8b5cf6);
   --accent-gradient-hover: linear-gradient(135deg, #7e9bff, #a78bfa);
@@ -66,6 +66,8 @@
   --text-secondary: #9ba1b7;
   --text-muted: #5f6580;
   --text-heading: #ffffff;
+
+  --accent-light: #8aa4ff;
 
   --accent-glow: rgba(99, 132, 255, 0.15);
 
@@ -384,7 +386,7 @@ img {
 
 .lecture-card p {
   font-size: 13px;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   line-height: 1.5;
 }
 
@@ -401,7 +403,7 @@ img {
   align-items: center;
   gap: 5px;
   font-size: 12px;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .lecture-stat-icon {
@@ -640,9 +642,11 @@ img {
 .study-section h3 {
   font-size: 18px;
   font-weight: 700;
-  color: var(--accent-light);
+  color: var(--text-heading);
   margin-bottom: 14px;
   padding-bottom: 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--accent);
   border-bottom: 1px solid var(--border);
 }
 
@@ -666,7 +670,7 @@ img {
 .key-term {
   display: inline-block;
   background: var(--accent-glow);
-  color: var(--accent-light);
+  color: var(--accent);
   padding: 1px 8px;
   border-radius: 4px;
   font-weight: 600;
@@ -690,12 +694,12 @@ img {
 .key-term-card dt {
   font-size: 13px;
   font-weight: 700;
-  color: var(--accent-light);
+  color: var(--accent);
   margin-bottom: 4px;
 }
 
 .key-term-card dd {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-secondary);
   line-height: 1.5;
 }
