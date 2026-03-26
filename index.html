@@ -69,6 +69,9 @@
           <div class="nav-item" data-view="quiz">
             <span class="nav-item-icon">✍️</span> Quiz
           </div>
+          <div class="nav-item" data-view="question-bank">
+            <span class="nav-item-icon">🧾</span> Question Bank
+          </div>
           <div class="nav-item" data-view="flashcards">
             <span class="nav-item-icon">🃏</span> Flashcards
           </div>
@@ -487,6 +490,71 @@
           </div>
         </div>
 
+        <!-- ===== QUESTION BANK VIEW ===== -->
+        <div class="view" id="view-question-bank">
+          <div class="page-header">
+            <h2>Question Bank Review</h2>
+            <p>Review the full question bank with correct answers and explanations</p>
+          </div>
+
+          <div class="card" style="margin-bottom: 20px">
+            <div class="question-bank-toolbar">
+              <div class="question-bank-summary" id="questionBankSummary">
+                0 / 0 questions
+              </div>
+              <button class="btn btn-ghost btn-sm" id="bankResetFiltersBtn">
+                Reset Filters
+              </button>
+            </div>
+
+            <div class="question-bank-filters">
+              <div class="filter-field">
+                <label for="bankLectureFilter">Lecture</label>
+                <select id="bankLectureFilter" class="filter-input">
+                  <option value="all">All lectures</option>
+                </select>
+              </div>
+
+              <div class="filter-field">
+                <label for="bankDifficultyFilter">Difficulty</label>
+                <select id="bankDifficultyFilter" class="filter-input">
+                  <option value="all">All difficulties</option>
+                  <option value="Easy">Easy</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Hard">Hard</option>
+                </select>
+              </div>
+
+              <div class="filter-field">
+                <label for="bankTypeFilter">Question Type</label>
+                <select id="bankTypeFilter" class="filter-input">
+                  <option value="all">All types</option>
+                  <option value="multiple-choice">Single Answer</option>
+                  <option value="multiple-answer">Multiple Answers</option>
+                  <option value="true-false">True / False</option>
+                </select>
+              </div>
+
+              <div class="filter-field">
+                <label for="bankSearchInput">Search</label>
+                <input
+                  id="bankSearchInput"
+                  class="filter-input"
+                  type="text"
+                  placeholder="Search question, answer, explanation..."
+                />
+              </div>
+            </div>
+          </div>
+
+          <div id="questionBankContent" class="question-bank-list">
+            <div class="review-empty">
+              <div class="review-empty-icon">🧾</div>
+              <p>Question bank review will appear here</p>
+            </div>
+          </div>
+        </div>
+
         <!-- ===== REVIEW VIEW ===== -->
         <div class="view" id="view-review">
           <div class="page-header">
@@ -640,6 +708,7 @@
 
           // View-specific init
           if (viewId === "dashboard") renderDashboard();
+          if (viewId === "question-bank") renderQuestionBank();
           if (viewId === "review") renderReview();
           if (viewId === "quiz") resetQuizView();
           if (viewId === "flashcards") renderFlashcardPicker();
@@ -1383,6 +1452,186 @@
           .getElementById("fcBackBtn")
           .addEventListener("click", renderFlashcardPicker);
 
+        // ========== QUESTION BANK REVIEW ==========
+        function initQuestionBankFilters() {
+          const lectureFilter = document.getElementById("bankLectureFilter");
+          lectureFilter.innerHTML =
+            '<option value="all">All lectures</option>' +
+            LECTURES.map(
+              (lec) =>
+                `<option value="${lec.id}">Lecture ${lec.id}: ${lec.title}</option>`,
+            ).join("");
+
+          [
+            "bankLectureFilter",
+            "bankDifficultyFilter",
+            "bankTypeFilter",
+          ].forEach((id) => {
+            document.getElementById(id).addEventListener("change", () => {
+              renderQuestionBank();
+            });
+          });
+
+          document
+            .getElementById("bankSearchInput")
+            .addEventListener("input", renderQuestionBank);
+
+          document
+            .getElementById("bankResetFiltersBtn")
+            .addEventListener("click", () => {
+              document.getElementById("bankLectureFilter").value = "all";
+              document.getElementById("bankDifficultyFilter").value = "all";
+              document.getElementById("bankTypeFilter").value = "all";
+              document.getElementById("bankSearchInput").value = "";
+              renderQuestionBank();
+            });
+        }
+
+        function getQuestionTypeLabel(type) {
+          if (type === "multiple-choice") return "Single Answer";
+          if (type === "multiple-answer") return "Multiple Answers";
+          if (type === "true-false") return "True / False";
+          return type;
+        }
+
+        function getLectureTitle(lectureId) {
+          const lecture = LECTURES.find((lec) => lec.id === lectureId);
+          return lecture ? lecture.title : "";
+        }
+
+        function renderQuestionBank() {
+          const container = document.getElementById("questionBankContent");
+          const summary = document.getElementById("questionBankSummary");
+          const lectureValue = document.getElementById("bankLectureFilter").value;
+          const difficultyValue =
+            document.getElementById("bankDifficultyFilter").value;
+          const typeValue = document.getElementById("bankTypeFilter").value;
+          const searchValue = document
+            .getElementById("bankSearchInput")
+            .value.trim()
+            .toLowerCase();
+
+          let questions = [...QUIZ_BANK].sort(
+            (a, b) => a.lectureId - b.lectureId || a.id - b.id,
+          );
+
+          questions = questions.filter((q) => {
+            const matchesLecture =
+              lectureValue === "all" || q.lectureId === parseInt(lectureValue);
+            const matchesDifficulty =
+              difficultyValue === "all" || q.difficulty === difficultyValue;
+            const matchesType = typeValue === "all" || q.type === typeValue;
+            const searchBlob = [
+              q.question,
+              q.explanation,
+              ...(q.options || []),
+              getLectureTitle(q.lectureId),
+            ]
+              .join(" ")
+              .toLowerCase();
+            const matchesSearch =
+              searchValue.length === 0 || searchBlob.includes(searchValue);
+
+            return (
+              matchesLecture &&
+              matchesDifficulty &&
+              matchesType &&
+              matchesSearch
+            );
+          });
+
+          summary.textContent = `${questions.length} / ${QUIZ_BANK.length} questions`;
+
+          if (questions.length === 0) {
+            container.innerHTML = `
+              <div class="review-empty">
+                <div class="review-empty-icon">🔍</div>
+                <p>No questions match the current filters.</p>
+              </div>
+            `;
+            return;
+          }
+
+          container.innerHTML = questions
+            .map((q, index) => {
+              const lectureTitle = getLectureTitle(q.lectureId);
+              const correctLetters = q.correctAnswers
+                .map((idx) => String.fromCharCode(65 + idx))
+                .join(", ");
+              const correctAnswerText = q.correctAnswers
+                .map((idx) => {
+                  const letter = String.fromCharCode(65 + idx);
+                  return `${letter}. ${q.options[idx]}`;
+                })
+                .join(" | ");
+              const answerLabel =
+                q.correctAnswers.length > 1 ? "Correct answers" : "Correct answer";
+
+              let diffBadge = "";
+              if (q.difficulty === "Easy")
+                diffBadge = '<span class="badge badge-easy">Easy</span>';
+              else if (q.difficulty === "Medium")
+                diffBadge = '<span class="badge badge-medium">Medium</span>';
+              else diffBadge = '<span class="badge badge-hard">Hard</span>';
+
+              let typeBadge = "";
+              if (q.type === "true-false")
+                typeBadge = '<span class="badge badge-tf">T/F</span>';
+              else if (q.type === "multiple-answer")
+                typeBadge = '<span class="badge badge-ma">Multi</span>';
+              else typeBadge = '<span class="badge badge-mc">MC</span>';
+
+              let trapsHtml = "";
+              if (q.traps) {
+                const trapItems = Object.entries(q.traps)
+                  .map(
+                    ([key, val]) =>
+                      `<div class="quiz-trap-item"><span class="quiz-trap-label">${key}:</span><span>${val}</span></div>`,
+                  )
+                  .join("");
+                if (trapItems) {
+                  trapsHtml = `<div class="quiz-traps"><h5>Trap Analysis</h5>${trapItems}</div>`;
+                }
+              }
+
+              const optionsHtml = (q.options || [])
+                .map((opt, optionIndex) => {
+                  const letter = String.fromCharCode(65 + optionIndex);
+                  const isCorrect = q.correctAnswers.includes(optionIndex);
+                  return `
+                    <div class="question-bank-option ${isCorrect ? "correct" : ""}">
+                      <span class="question-bank-option-letter">${letter}</span>
+                      <span>${opt}</span>
+                    </div>
+                  `;
+                })
+                .join("");
+
+              return `
+                <div class="card question-bank-card">
+                  <div class="quiz-question-meta">
+                    <span class="quiz-question-number">#${index + 1}</span>
+                    <span class="quiz-question-number">Lecture ${q.lectureId}${lectureTitle ? `: ${lectureTitle}` : ""}</span>
+                    ${diffBadge}
+                    ${typeBadge}
+                  </div>
+
+                  <div class="quiz-question-text">${q.question}</div>
+                  <div class="question-bank-options">${optionsHtml}</div>
+                  <div class="question-bank-answer">
+                    <strong>${answerLabel}:</strong> ${correctLetters}<br />
+                    ${correctAnswerText}
+                  </div>
+                  <div class="question-bank-explanation">
+                    <strong>Explanation:</strong> ${q.explanation}
+                  </div>
+                  ${trapsHtml}
+                </div>
+              `;
+            })
+            .join("");
+        }
+
         // ========== REVIEW MODE ==========
         function renderReview() {
           const container = document.getElementById("reviewContent");
@@ -1517,6 +1766,7 @@
         }
 
         // ========== INIT ==========
+        initQuestionBankFilters();
         renderLectureNav();
         renderDashboard();
         initThemeToggle();

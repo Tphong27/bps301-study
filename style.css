@@ -1224,6 +1224,126 @@ img {
   background: var(--bg-card-hover);
 }
 
+/* --- Question Bank Review --- */
+.question-bank-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.question-bank-summary {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.question-bank-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filter-field label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.filter-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-input);
+  color: var(--text-primary);
+  font: inherit;
+}
+
+.filter-input:focus {
+  outline: none;
+  border-color: var(--border-active);
+}
+
+.question-bank-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.question-bank-card {
+  padding: 24px;
+}
+
+.question-bank-options {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.question-bank-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+}
+
+.question-bank-option.correct {
+  border-color: var(--green);
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.question-bank-option-letter {
+  min-width: 28px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-input);
+  color: var(--text-heading);
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.question-bank-option.correct .question-bank-option-letter {
+  background: var(--green);
+  color: #fff;
+}
+
+.question-bank-answer {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+.question-bank-explanation {
+  margin-top: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
 /* --- Review Mode --- */
 .review-empty {
   text-align: center;
@@ -1358,6 +1478,9 @@ img {
   }
   .checkbox-grid {
     grid-template-columns: 1fr;
+  }
+  .question-bank-toolbar {
+    align-items: stretch;
   }
 }
 
