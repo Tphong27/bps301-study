@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BPS301 Business Process Management — Study Materials, Quiz & Flashcards">
+  <title>BPS301 Study Hub — Business Process Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Mobile Header -->
+<header class="mobile-header">
+  <button class="hamburger" id="hamburgerBtn" aria-label="Menu">☰</button>
+  <span style="font-weight:700;font-size:15px;margin-left:12px;">BPS301 Study Hub</span>
+</header>
+<div class="overlay" id="overlay"></div>
+
+<!-- App Layout -->
+<div class="app-layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-icon">BP</div>
+        <div class="sidebar-logo-text">
+          <h1>BPS301 Study Hub</h1>
+          <span>Business Process Mgmt</span>
+        </div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section-title">Main</div>
+      <div class="nav-item active" data-view="dashboard">
+        <span class="nav-item-icon">📊</span> Dashboard
+      </div>
+
+      <div class="nav-section-title">Modes</div>
+      <div class="nav-item" data-view="study">
+        <span class="nav-item-icon">📖</span> Study
+      </div>
+      <div class="nav-item" data-view="quiz">
+        <span class="nav-item-icon">✍️</span> Quiz
+      </div>
+      <div class="nav-item" data-view="flashcards">
+        <span class="nav-item-icon">🃏</span> Flashcards
+      </div>
+      <div class="nav-item" data-view="review">
+        <span class="nav-item-icon">🔄</span> Review Wrong
+        <span class="nav-item-badge" id="wrongCountBadge">0</span>
+      </div>
+
+      <div class="nav-section-title">Lectures</div>
+      <div id="lectureNavList"></div>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- ===== DASHBOARD VIEW ===== -->
+    <div class="view active" id="view-dashboard">
+      <div class="page-header">
+        <h2>Dashboard</h2>
+        <p>Your BPS301 study progress overview</p>
+      </div>
+
+      <!-- Overall Stats -->
+      <div style="display:flex;gap:16px;margin-bottom:28px;flex-wrap:wrap;">
+        <div class="card" style="flex:1;min-width:180px;text-align:center;">
+          <div style="font-size:28px;font-weight:800;color:var(--accent-light);" id="statTotalQuiz">0</div>
+          <div style="font-size:12px;color:var(--text-muted);font-weight:600;margin-top:4px;">Quizzes Taken</div>
+        </div>
+        <div class="card" style="flex:1;min-width:180px;text-align:center;">
+          <div style="font-size:28px;font-weight:800;color:var(--green);" id="statAvgScore">0%</div>
+          <div style="font-size:12px;color:var(--text-muted);font-weight:600;margin-top:4px;">Avg Score</div>
+        </div>
+        <div class="card" style="flex:1;min-width:180px;text-align:center;">
+          <div style="font-size:28px;font-weight:800;color:var(--amber);" id="statFlashcards">0</div>
+          <div style="font-size:12px;color:var(--text-muted);font-weight:600;margin-top:4px;">Cards Reviewed</div>
+        </div>
+        <div class="card" style="flex:1;min-width:180px;text-align:center;">
+          <div style="font-size:28px;font-weight:800;color:var(--red);" id="statWrong">0</div>
+          <div style="font-size:12px;color:var(--text-muted);font-weight:600;margin-top:4px;">To Review</div>
+        </div>
+      </div>
+
+      <!-- Lecture Cards Grid -->
+      <div class="card-grid" id="dashboardGrid"></div>
+    </div>
+
+    <!-- ===== STUDY VIEW ===== -->
+    <div class="view" id="view-study">
+      <div class="page-header flex-between">
+        <div>
+          <h2 id="studyTitle">Study Mode</h2>
+          <p id="studySubtitle">Select a lecture from the sidebar or dashboard</p>
+        </div>
+        <div class="study-lang-toggle">
+          <button class="study-lang-btn active" data-lang="en">EN</button>
+          <button class="study-lang-btn" data-lang="vi">VI</button>
+          <button class="study-lang-btn" data-lang="both">EN/VI</button>
+        </div>
+      </div>
+      <div class="study-container" id="studyContent">
+        <div class="review-empty">
+          <div class="review-empty-icon">📖</div>
+          <p>Select a lecture to start studying</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== QUIZ VIEW ===== -->
+    <div class="view" id="view-quiz">
+      <!-- Quiz Config -->
+      <div id="quizConfig">
+        <div class="page-header" style="text-align:center;">
+          <h2>Quiz Mode</h2>
+          <p>Configure your quiz and test your knowledge</p>
+        </div>
+        <div class="quiz-config">
+          <div class="quiz-config-section">
+            <h3>📚 Select Lectures</h3>
+            <div class="checkbox-grid" id="quizLectureSelect"></div>
+          </div>
+          <div class="quiz-config-section">
+            <h3>📊 Difficulty</h3>
+            <div class="checkbox-grid" id="quizDifficultySelect">
+              <label class="checkbox-item"><input type="checkbox" value="Easy" checked> 🟢 Easy</label>
+              <label class="checkbox-item"><input type="checkbox" value="Medium" checked> 🟡 Medium</label>
+              <label class="checkbox-item"><input type="checkbox" value="Hard" checked> 🔴 Hard</label>
+            </div>
+          </div>
+          <div class="quiz-config-section">
+            <h3>📝 Question Type</h3>
+            <div class="checkbox-grid" id="quizTypeSelect">
+              <label class="checkbox-item"><input type="checkbox" value="multiple-choice" checked> Single Answer</label>
+              <label class="checkbox-item"><input type="checkbox" value="multiple-answer" checked> Multiple Answers</label>
+              <label class="checkbox-item"><input type="checkbox" value="true-false" checked> True / False</label>
+            </div>
+          </div>
+          <div class="quiz-config-section">
+            <h3>🔢 Number of Questions</h3>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <input type="range" id="quizCountSlider" min="5" max="50" value="20"
+                style="flex:1;accent-color:var(--accent);">
+              <span id="quizCountLabel" style="font-weight:700;font-size:18px;color:var(--accent-light);min-width:30px;">20</span>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-lg btn-block mt-24" id="startQuizBtn">
+            🚀 Start Quiz
+          </button>
+        </div>
+      </div>
+
+      <!-- Quiz Active -->
+      <div id="quizActive" class="hidden">
+        <div class="quiz-active">
+          <div class="quiz-progress-bar">
+            <span class="quiz-progress-text" id="quizProgressText">1 / 20</span>
+            <div class="progress-bar" style="flex:1;">
+              <div class="progress-bar-fill" id="quizProgressFill" style="width:0%"></div>
+            </div>
+            <button class="btn btn-ghost btn-sm" id="quitQuizBtn">✕ Quit</button>
+          </div>
+          <div class="quiz-question-card card" id="quizQuestionCard">
+            <!-- Rendered dynamically -->
+          </div>
+          <div style="display:flex;justify-content:flex-end;gap:8px;" id="quizNavButtons" class="hidden">
+            <button class="btn btn-primary" id="nextQuestionBtn">Next →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quiz Results -->
+      <div id="quizResults" class="hidden">
+        <div class="quiz-results">
+          <div class="page-header">
+            <h2>Quiz Complete! 🎉</h2>
+          </div>
+          <div class="quiz-score-circle">
+            <svg viewBox="0 0 100 100">
+              <circle class="score-bg" cx="50" cy="50" r="42"/>
+              <circle class="score-fill" id="scoreCircle" cx="50" cy="50" r="42"
+                stroke-dasharray="264" stroke-dashoffset="264"/>
+            </svg>
+            <div class="quiz-score-text">
+              <div class="quiz-score-value" id="scoreValue">0%</div>
+              <div class="quiz-score-label">Score</div>
+            </div>
+          </div>
+          <div class="quiz-stats-row">
+            <div class="quiz-stat-item">
+              <div class="quiz-stat-value correct-color" id="correctCount">0</div>
+              <div class="quiz-stat-name">Correct</div>
+            </div>
+            <div class="quiz-stat-item">
+              <div class="quiz-stat-value incorrect-color" id="incorrectCount">0</div>
+              <div class="quiz-stat-name">Incorrect</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px;">
+            <button class="btn btn-primary" id="retakeQuizBtn">🔄 Retake Quiz</button>
+            <button class="btn btn-secondary" id="reviewMistakesBtn">📋 Review Mistakes</button>
+            <button class="btn btn-secondary" id="backToDashboardBtn">🏠 Dashboard</button>
+          </div>
+          <div id="resultsMistakesList" class="mt-24" style="text-align:left;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== FLASHCARD VIEW ===== -->
+    <div class="view" id="view-flashcards">
+      <div class="page-header" style="text-align:center;">
+        <h2>Flashcards</h2>
+        <p id="flashcardSubtitle">Select a lecture to practice</p>
+      </div>
+
+      <!-- Flashcard Lecture Picker -->
+      <div id="flashcardPicker" class="card-grid" style="max-width:700px;margin:0 auto;"></div>
+
+      <!-- Flashcard Active -->
+      <div id="flashcardActive" class="hidden">
+        <div class="flashcard-container">
+          <div class="quiz-progress-bar mb-16">
+            <span class="quiz-progress-text" id="fcProgressText">1 / 10</span>
+            <div class="progress-bar" style="flex:1;">
+              <div class="progress-bar-fill" id="fcProgressFill" style="width:0%"></div>
+            </div>
+            <button class="btn btn-ghost btn-sm" id="fcBackBtn">← Back</button>
+          </div>
+
+          <div class="flashcard" id="flashcard">
+            <div class="flashcard-inner">
+              <div class="flashcard-front">
+                <div class="flashcard-label">Question</div>
+                <div class="flashcard-text" id="fcFront"></div>
+                <div class="flashcard-hint">Click to reveal answer</div>
+              </div>
+              <div class="flashcard-back">
+                <div class="flashcard-label">Answer</div>
+                <div class="flashcard-text" id="fcBack"></div>
+              </div>
+            </div>
+          </div>
+
+          <p style="font-size:12px;color:var(--text-muted);margin-bottom:12px;font-weight:600;">
+            Rate your confidence:
+          </p>
+          <div class="confidence-buttons">
+            <button class="confidence-btn" data-level="1" title="No clue">1</button>
+            <button class="confidence-btn" data-level="2" title="Barely remember">2</button>
+            <button class="confidence-btn" data-level="3" title="Somewhat know">3</button>
+            <button class="confidence-btn" data-level="4" title="Know well">4</button>
+            <button class="confidence-btn" data-level="5" title="Mastered">5</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== REVIEW VIEW ===== -->
+    <div class="view" id="view-review">
+      <div class="page-header">
+        <h2>Review Wrong Answers</h2>
+        <p>Questions you got wrong — review and learn from mistakes</p>
+      </div>
+      <div id="reviewContent">
+        <div class="review-empty">
+          <div class="review-empty-icon">✅</div>
+          <p>No wrong answers to review! Keep it up!</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- Data Scripts -->
+<script>window._BPS301_DATA = [];</script>
+<script src="data/lecture01.js"></script>
+<script src="data/lecture02.js"></script>
+<script src="data/lecture03.js"></script>
+<script src="data/lecture04.js"></script>
+<script src="data/lecture05.js"></script>
+<script src="data/lecture06.js"></script>
+<script src="data/lecture07.js"></script>
+<script src="data/lecture08.js"></script>
+<script src="data/lecture09.js"></script>
+<script src="data/lecture10.js"></script>
+<script src="data/lecture11.js"></script>
+<script src="data/index.js"></script>
+
+<!-- App Logic -->
+<script>
+(function() {
+  'use strict';
+
+  // ========== DATA REFERENCES ==========
+  const LECTURES = window.LECTURES || [];
+  const QUIZ_BANK = window.QUIZ_BANK || [];
+  const FLASHCARDS = window.FLASHCARDS || [];
+
+  // ========== STATE ==========
+  const state = {
+    currentView: 'dashboard',
+    studyLecture: null,
+    studyLang: 'en',
+    // Quiz
+    quizQuestions: [],
+    quizIndex: 0,
+    quizAnswered: false,
+    quizSelectedAnswers: [],
+    quizResults: [],
+    // Flashcard
+    fcLecture: null,
+    fcCards: [],
+    fcIndex: 0,
+    fcFlipped: false,
+  };
+
+  // ========== LOCAL STORAGE ==========
+  const STORAGE_KEY = 'bps301_progress';
+
+  function loadProgress() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY)) || getDefaultProgress();
+    } catch { return getDefaultProgress(); }
+  }
+
+  function getDefaultProgress() {
+    return {
+      quizHistory: [],       // [{date, score, total, lectureIds}]
+      wrongAnswers: [],      // [{questionId, lectureId, question, correctAnswers, userAnswers, options, explanation, traps}]
+      flashcardConfidence: {}, // { "lectureId_cardId": level }
+      totalFlashcardsReviewed: 0,
+    };
+  }
+
+  function saveProgress(progress) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+  }
+
+  let progress = loadProgress();
+
+  // ========== NAVIGATION ==========
+  const navItems = document.querySelectorAll('.nav-item[data-view]');
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+  const hamburger = document.getElementById('hamburgerBtn');
+
+  function switchView(viewId) {
+    state.currentView = viewId;
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    const target = document.getElementById('view-' + viewId);
+    if (target) target.classList.add('active');
+
+    navItems.forEach(n => {
+      n.classList.toggle('active', n.dataset.view === viewId);
+    });
+
+    // Close mobile sidebar
+    sidebar.classList.remove('open');
+    overlay.classList.remove('active');
+
+    // View-specific init
+    if (viewId === 'dashboard') renderDashboard();
+    if (viewId === 'review') renderReview();
+    if (viewId === 'quiz') resetQuizView();
+    if (viewId === 'flashcards') renderFlashcardPicker();
+  }
+
+  navItems.forEach(item => {
+    item.addEventListener('click', () => switchView(item.dataset.view));
+  });
+
+  hamburger.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('active');
+  });
+
+  overlay.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('active');
+  });
+
+  // ========== DASHBOARD ==========
+  function renderDashboard() {
+    updateStats();
+    const grid = document.getElementById('dashboardGrid');
+    grid.innerHTML = '';
+
+    LECTURES.forEach(lec => {
+      const quizCount = QUIZ_BANK.filter(q => q.lectureId === lec.id).length;
+      const fcCount = FLASHCARDS.filter(f => f.lectureId === lec.id).length;
+      const lecWrong = progress.wrongAnswers.filter(w => w.lectureId === lec.id).length;
+
+      const card = document.createElement('div');
+      card.className = 'card lecture-card';
+      card.innerHTML = `
+        <div class="lecture-card-header">
+          <span class="lecture-number">Lecture ${lec.id}</span>
+          ${lecWrong > 0 ? `<span class="badge badge-hard">${lecWrong} wrong</span>` : ''}
+        </div>
+        <h3>${lec.title}</h3>
+        <p>${lec.titleVi}</p>
+        <div class="lecture-card-footer">
+          <span class="lecture-stat"><span class="lecture-stat-icon">📖</span> ${lec.sections ? lec.sections.length : 0} sections</span>
+          <span class="lecture-stat"><span class="lecture-stat-icon">✍️</span> ${quizCount} questions</span>
+          <span class="lecture-stat"><span class="lecture-stat-icon">🃏</span> ${fcCount} cards</span>
+        </div>
+      `;
+      card.addEventListener('click', () => {
+        openStudyLecture(lec.id);
+      });
+      grid.appendChild(card);
+    });
+  }
+
+  function updateStats() {
+    const hist = progress.quizHistory;
+    document.getElementById('statTotalQuiz').textContent = hist.length;
+    if (hist.length > 0) {
+      const avg = hist.reduce((s, h) => s + (h.score / h.total * 100), 0) / hist.length;
+      document.getElementById('statAvgScore').textContent = Math.round(avg) + '%';
+    } else {
+      document.getElementById('statAvgScore').textContent = '0%';
+    }
+    document.getElementById('statFlashcards').textContent = progress.totalFlashcardsReviewed;
+    document.getElementById('statWrong').textContent = progress.wrongAnswers.length;
+    document.getElementById('wrongCountBadge').textContent = progress.wrongAnswers.length;
+  }
+
+  // ========== LECTURE NAV (sidebar) ==========
+  function renderLectureNav() {
+    const list = document.getElementById('lectureNavList');
+    list.innerHTML = '';
+    LECTURES.forEach(lec => {
+      const item = document.createElement('div');
+      item.className = 'nav-item';
+      item.dataset.lectureId = lec.id;
+      item.innerHTML = `
+        <span class="nav-item-icon" style="font-size:12px;font-weight:700;color:var(--text-muted);">L${lec.id}</span>
+        <span style="font-size:12px;">${lec.title}</span>
+      `;
+      item.addEventListener('click', () => openStudyLecture(lec.id));
+      list.appendChild(item);
+    });
+  }
+
+  // ========== STUDY MODE ==========
+  function openStudyLecture(lectureId) {
+    const lec = LECTURES.find(l => l.id === lectureId);
+    if (!lec) return;
+    state.studyLecture = lec;
+    switchView('study');
+    document.getElementById('studyTitle').textContent = `Lecture ${lec.id}: ${lec.title}`;
+    document.getElementById('studySubtitle').textContent = lec.titleVi;
+    renderStudyContent();
+  }
+
+  // Language toggle
+  document.querySelectorAll('.study-lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.study-lang-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.studyLang = btn.dataset.lang;
+      renderStudyContent();
+    });
+  });
+
+  function renderStudyContent() {
+    const container = document.getElementById('studyContent');
+    const lec = state.studyLecture;
+    if (!lec || !lec.sections) {
+      container.innerHTML = '<div class="review-empty"><div class="review-empty-icon">📖</div><p>No content available yet</p></div>';
+      return;
+    }
+
+    const lang = state.studyLang;
+    container.innerHTML = '';
+
+    lec.sections.forEach(sec => {
+      const div = document.createElement('div');
+      div.className = 'study-section';
+
+      let heading = '';
+      if (lang === 'en') heading = sec.heading;
+      else if (lang === 'vi') heading = sec.headingVi || sec.heading;
+      else heading = `${sec.heading} <span style="color:var(--text-muted);font-size:14px;">/ ${sec.headingVi || ''}</span>`;
+
+      let content = '';
+      if (lang === 'en') content = sec.content;
+      else if (lang === 'vi') content = sec.contentVi || sec.content;
+      else content = `${sec.content}<hr style="border-color:var(--border);margin:14px 0;"><div style="color:var(--accent-light);">${sec.contentVi || ''}</div>`;
+
+      let keyTermsHtml = '';
+      if (sec.keyTerms && sec.keyTerms.length > 0) {
+        const termsCards = sec.keyTerms.map(kt => {
+          let term = lang === 'vi' ? (kt.termVi || kt.term) : kt.term;
+          let def = lang === 'vi' ? (kt.definitionVi || kt.definition) : kt.definition;
+          if (lang === 'both') {
+            term = `${kt.term} / ${kt.termVi || ''}`;
+            def = `${kt.definition}<br><em style="color:var(--accent-light);">${kt.definitionVi || ''}</em>`;
+          }
+          return `<div class="key-term-card"><dt>${term}</dt><dd>${def}</dd></div>`;
+        }).join('');
+        keyTermsHtml = `<div class="key-terms-grid">${termsCards}</div>`;
+      }
+
+      div.innerHTML = `<h3>${heading}</h3><div>${content}</div>${keyTermsHtml}`;
+      container.appendChild(div);
+    });
+  }
+
+  // ========== QUIZ MODE ==========
+  function resetQuizView() {
+    document.getElementById('quizConfig').classList.remove('hidden');
+    document.getElementById('quizActive').classList.add('hidden');
+    document.getElementById('quizResults').classList.add('hidden');
+    renderQuizLectureCheckboxes();
+  }
+
+  function renderQuizLectureCheckboxes() {
+    const container = document.getElementById('quizLectureSelect');
+    container.innerHTML = '';
+    LECTURES.forEach(lec => {
+      const count = QUIZ_BANK.filter(q => q.lectureId === lec.id).length;
+      const label = document.createElement('label');
+      label.className = 'checkbox-item';
+      label.innerHTML = `<input type="checkbox" value="${lec.id}" checked> L${lec.id}: ${lec.title} <span style="margin-left:auto;font-size:10px;color:var(--text-muted);">(${count})</span>`;
+      container.appendChild(label);
+    });
+  }
+
+  // Slider
+  const slider = document.getElementById('quizCountSlider');
+  const sliderLabel = document.getElementById('quizCountLabel');
+  slider.addEventListener('input', () => { sliderLabel.textContent = slider.value; });
+
+  // Start quiz
+  document.getElementById('startQuizBtn').addEventListener('click', startQuiz);
+
+  function startQuiz() {
+    const selectedLectures = [...document.querySelectorAll('#quizLectureSelect input:checked')].map(c => parseInt(c.value));
+    const selectedDiffs = [...document.querySelectorAll('#quizDifficultySelect input:checked')].map(c => c.value);
+    const selectedTypes = [...document.querySelectorAll('#quizTypeSelect input:checked')].map(c => c.value);
+    const count = parseInt(slider.value);
+
+    let pool = QUIZ_BANK.filter(q =>
+      selectedLectures.includes(q.lectureId) &&
+      selectedDiffs.includes(q.difficulty) &&
+      selectedTypes.includes(q.type)
+    );
+
+    if (pool.length === 0) {
+      alert('No questions match your filters. Please adjust settings.');
+      return;
+    }
+
+    // Shuffle and pick
+    pool = shuffleArray(pool).slice(0, count);
+
+    state.quizQuestions = pool;
+    state.quizIndex = 0;
+    state.quizResults = [];
+    state.quizAnswered = false;
+    state.quizSelectedAnswers = [];
+
+    document.getElementById('quizConfig').classList.add('hidden');
+    document.getElementById('quizActive').classList.remove('hidden');
+    document.getElementById('quizResults').classList.add('hidden');
+
+    renderQuizQuestion();
+  }
+
+  function renderQuizQuestion() {
+    const q = state.quizQuestions[state.quizIndex];
+    const total = state.quizQuestions.length;
+    const idx = state.quizIndex;
+
+    document.getElementById('quizProgressText').textContent = `${idx + 1} / ${total}`;
+    document.getElementById('quizProgressFill').style.width = ((idx + 1) / total * 100) + '%';
+
+    state.quizAnswered = false;
+    state.quizSelectedAnswers = [];
+    document.getElementById('quizNavButtons').classList.add('hidden');
+
+    const card = document.getElementById('quizQuestionCard');
+    const isMulti = q.type === 'multiple-answer';
+
+    let diffBadge = '';
+    if (q.difficulty === 'Easy') diffBadge = '<span class="badge badge-easy">Easy</span>';
+    else if (q.difficulty === 'Medium') diffBadge = '<span class="badge badge-medium">Medium</span>';
+    else diffBadge = '<span class="badge badge-hard">Hard</span>';
+
+    let typeBadge = '';
+    if (q.type === 'true-false') typeBadge = '<span class="badge badge-tf">T/F</span>';
+    else if (q.type === 'multiple-answer') typeBadge = '<span class="badge badge-ma">Multi</span>';
+    else typeBadge = '<span class="badge badge-mc">MC</span>';
+
+    const multiHint = isMulti
+      ? `<div class="quiz-multi-hint">⚠️ Select ALL correct answers (${q.correctAnswers.length} correct)</div>`
+      : '';
+
+    const optionsHtml = q.options.map((opt, i) => {
+      const letter = String.fromCharCode(65 + i);
+      return `<div class="quiz-option" data-index="${i}">
+        <span class="quiz-option-letter">${letter}</span>
+        <span>${opt}</span>
+      </div>`;
+    }).join('');
+
+    card.innerHTML = `
+      <div class="quiz-question-meta">
+        <span class="quiz-question-number">Question ${idx + 1}</span>
+        ${diffBadge} ${typeBadge}
+      </div>
+      <div class="quiz-question-text">${q.question}</div>
+      ${multiHint}
+      <div class="quiz-options">${optionsHtml}</div>
+      <div id="explanationArea"></div>
+    `;
+
+    // Attach click handlers
+    card.querySelectorAll('.quiz-option').forEach(opt => {
+      opt.addEventListener('click', () => handleOptionClick(opt, q));
+    });
+  }
+
+  function handleOptionClick(optEl, q) {
+    const idx = parseInt(optEl.dataset.index);
+    const isMulti = q.type === 'multiple-answer';
+
+    if (isMulti && !state.quizAnswered) {
+      optEl.classList.toggle('selected');
+      if (optEl.classList.contains('selected')) {
+        state.quizSelectedAnswers.push(idx);
+      } else {
+        state.quizSelectedAnswers = state.quizSelectedAnswers.filter(i => i !== idx);
+      }
+      // Show submit button for multi-answer
+      if (state.quizSelectedAnswers.length > 0) {
+        let submitBtn = document.getElementById('multiSubmitBtn');
+        if (!submitBtn) {
+          const nav = document.getElementById('quizNavButtons');
+          nav.classList.remove('hidden');
+          submitBtn = document.createElement('button');
+          submitBtn.className = 'btn btn-primary';
+          submitBtn.id = 'multiSubmitBtn';
+          submitBtn.textContent = 'Submit Answer';
+          submitBtn.addEventListener('click', () => submitMultiAnswer(q));
+          nav.prepend(submitBtn);
+          document.getElementById('nextQuestionBtn').classList.add('hidden');
+        }
+      }
+      return;
+    }
+
+    if (state.quizAnswered) return;
+
+    // Single answer
+    state.quizSelectedAnswers = [idx];
+    revealAnswer(q);
+  }
+
+  function submitMultiAnswer(q) {
+    if (state.quizAnswered) return;
+    revealAnswer(q);
+    const submitBtn = document.getElementById('multiSubmitBtn');
+    if (submitBtn) submitBtn.remove();
+    document.getElementById('nextQuestionBtn').classList.remove('hidden');
+  }
+
+  function revealAnswer(q) {
+    state.quizAnswered = true;
+    const card = document.getElementById('quizQuestionCard');
+    const options = card.querySelectorAll('.quiz-option');
+
+    const isCorrect = arraysEqual(
+      [...state.quizSelectedAnswers].sort(),
+      [...q.correctAnswers].sort()
+    );
+
+    options.forEach(opt => {
+      const i = parseInt(opt.dataset.index);
+      opt.classList.add('disabled');
+      if (q.correctAnswers.includes(i)) {
+        opt.classList.add('correct');
+        opt.classList.remove('selected');
+      } else if (state.quizSelectedAnswers.includes(i)) {
+        opt.classList.add('incorrect');
+        opt.classList.remove('selected');
+      }
+    });
+
+    // Record result
+    state.quizResults.push({
+      question: q,
+      userAnswers: [...state.quizSelectedAnswers],
+      correct: isCorrect,
+    });
+
+    // Save wrong answer for review
+    if (!isCorrect) {
+      addWrongAnswer(q, state.quizSelectedAnswers);
+    } else {
+      // Remove from wrong answers if they got it right now
+      removeWrongAnswer(q.id);
+    }
+
+    // Show explanation
+    const area = document.getElementById('explanationArea');
+    let trapsHtml = '';
+    if (q.traps) {
+      const trapItems = Object.entries(q.traps)
+        .filter(([key]) => !q.correctAnswers.includes(key.charCodeAt(0) - 65))
+        .map(([key, val]) => `<div class="quiz-trap-item"><span class="quiz-trap-label">${key}:</span><span>${val}</span></div>`)
+        .join('');
+      if (trapItems) {
+        trapsHtml = `<div class="quiz-traps"><h5>🪤 Trap Analysis</h5>${trapItems}</div>`;
+      }
+    }
+
+    area.innerHTML = `
+      <div class="quiz-explanation">
+        <h4>${isCorrect ? '✅ Correct!' : '❌ Incorrect'}</h4>
+        <p>${q.explanation}</p>
+        ${trapsHtml}
+      </div>
+    `;
+
+    document.getElementById('quizNavButtons').classList.remove('hidden');
+    document.getElementById('nextQuestionBtn').classList.remove('hidden');
+  }
+
+  // Next question
+  document.getElementById('nextQuestionBtn').addEventListener('click', () => {
+    if (state.quizIndex < state.quizQuestions.length - 1) {
+      state.quizIndex++;
+      renderQuizQuestion();
+    } else {
+      showQuizResults();
+    }
+  });
+
+  // Quit quiz
+  document.getElementById('quitQuizBtn').addEventListener('click', () => {
+    if (confirm('Quit this quiz? Progress will be lost.')) {
+      resetQuizView();
+    }
+  });
+
+  function showQuizResults() {
+    document.getElementById('quizActive').classList.add('hidden');
+    document.getElementById('quizResults').classList.remove('hidden');
+
+    const correct = state.quizResults.filter(r => r.correct).length;
+    const total = state.quizResults.length;
+    const pct = Math.round(correct / total * 100);
+
+    document.getElementById('scoreValue').textContent = pct + '%';
+    document.getElementById('correctCount').textContent = correct;
+    document.getElementById('incorrectCount').textContent = total - correct;
+
+    // Animate score circle
+    const circle = document.getElementById('scoreCircle');
+    const circumference = 264;
+    const offset = circumference - (pct / 100) * circumference;
+    circle.style.stroke = pct >= 70 ? 'var(--green)' : pct >= 40 ? 'var(--amber)' : 'var(--red)';
+    setTimeout(() => { circle.style.strokeDashoffset = offset; }, 100);
+
+    // Save history
+    const lectureIds = [...new Set(state.quizQuestions.map(q => q.lectureId))];
+    progress.quizHistory.push({ date: new Date().toISOString(), score: correct, total, lectureIds });
+    saveProgress(progress);
+
+    // Render mistakes
+    const mistakes = state.quizResults.filter(r => !r.correct);
+    const list = document.getElementById('resultsMistakesList');
+    if (mistakes.length > 0) {
+      list.innerHTML = '<h3 style="margin-bottom:16px;font-size:16px;color:var(--text-heading);">Mistakes Review</h3>';
+      mistakes.forEach((m, i) => {
+        const q = m.question;
+        const correctLetters = q.correctAnswers.map(idx => String.fromCharCode(65 + idx)).join(', ');
+        const userLetters = m.userAnswers.map(idx => String.fromCharCode(65 + idx)).join(', ');
+        list.innerHTML += `
+          <div class="card mb-16" style="padding:20px;">
+            <div class="quiz-question-meta mb-8">
+              <span class="quiz-question-number">#${i+1}</span>
+              <span class="badge badge-${q.difficulty.toLowerCase()}">${q.difficulty}</span>
+            </div>
+            <p style="font-weight:600;margin-bottom:8px;">${q.question}</p>
+            <p style="font-size:13px;color:var(--red);">Your answer: ${userLetters}</p>
+            <p style="font-size:13px;color:var(--green);">Correct: ${correctLetters}</p>
+            <p style="font-size:13px;color:var(--text-secondary);margin-top:6px;">${q.explanation}</p>
+          </div>`;
+      });
+    } else {
+      list.innerHTML = '<p style="color:var(--green);font-weight:600;text-align:center;">🎉 Perfect score!</p>';
+    }
+  }
+
+  document.getElementById('retakeQuizBtn').addEventListener('click', resetQuizView);
+  document.getElementById('backToDashboardBtn').addEventListener('click', () => switchView('dashboard'));
+  document.getElementById('reviewMistakesBtn').addEventListener('click', () => switchView('review'));
+
+  // ========== FLASHCARD MODE ==========
+  function renderFlashcardPicker() {
+    const picker = document.getElementById('flashcardPicker');
+    const active = document.getElementById('flashcardActive');
+    picker.classList.remove('hidden');
+    active.classList.add('hidden');
+    picker.innerHTML = '';
+    document.getElementById('flashcardSubtitle').textContent = 'Select a lecture to practice';
+
+    LECTURES.forEach(lec => {
+      const cards = FLASHCARDS.filter(f => f.lectureId === lec.id);
+      if (cards.length === 0) return;
+      const div = document.createElement('div');
+      div.className = 'card lecture-card';
+      div.innerHTML = `
+        <span class="lecture-number">Lecture ${lec.id}</span>
+        <h3 style="margin-top:10px;">${lec.title}</h3>
+        <p style="margin-top:4px;font-size:13px;color:var(--text-muted);">${cards.length} flashcards</p>
+      `;
+      div.addEventListener('click', () => startFlashcards(lec.id));
+      picker.appendChild(div);
+    });
+
+    if (picker.children.length === 0) {
+      picker.innerHTML = '<div class="review-empty"><div class="review-empty-icon">🃏</div><p>No flashcards available yet</p></div>';
+    }
+  }
+
+  function startFlashcards(lectureId) {
+    const cards = FLASHCARDS.filter(f => f.lectureId === lectureId);
+    if (cards.length === 0) return;
+    state.fcLecture = lectureId;
+    state.fcCards = shuffleArray([...cards]);
+    state.fcIndex = 0;
+    state.fcFlipped = false;
+
+    const lec = LECTURES.find(l => l.id === lectureId);
+    document.getElementById('flashcardSubtitle').textContent = `Lecture ${lectureId}: ${lec ? lec.title : ''}`;
+    document.getElementById('flashcardPicker').classList.add('hidden');
+    document.getElementById('flashcardActive').classList.remove('hidden');
+
+    renderFlashcard();
+  }
+
+  function renderFlashcard() {
+    const card = state.fcCards[state.fcIndex];
+    if (!card) return;
+    const total = state.fcCards.length;
+    document.getElementById('fcProgressText').textContent = `${state.fcIndex + 1} / ${total}`;
+    document.getElementById('fcProgressFill').style.width = ((state.fcIndex + 1) / total * 100) + '%';
+    document.getElementById('fcFront').textContent = card.front;
+
+    const lang = state.studyLang;
+    let backText = card.back;
+    if (lang === 'vi' && card.backVi) backText = card.backVi;
+    else if (lang === 'both' && card.backVi) backText = card.back + '\n\n' + card.backVi;
+    document.getElementById('fcBack').textContent = backText;
+
+    const fc = document.getElementById('flashcard');
+    fc.classList.remove('flipped');
+    state.fcFlipped = false;
+  }
+
+  document.getElementById('flashcard').addEventListener('click', () => {
+    const fc = document.getElementById('flashcard');
+    fc.classList.toggle('flipped');
+    state.fcFlipped = !state.fcFlipped;
+  });
+
+  document.querySelectorAll('.confidence-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const level = parseInt(btn.dataset.level);
+      const card = state.fcCards[state.fcIndex];
+      if (card) {
+        progress.flashcardConfidence[`${card.lectureId}_${card.id}`] = level;
+        progress.totalFlashcardsReviewed++;
+        saveProgress(progress);
+      }
+      // Next card
+      if (state.fcIndex < state.fcCards.length - 1) {
+        state.fcIndex++;
+        renderFlashcard();
+      } else {
+        // Done
+        alert(`Flashcards complete! You reviewed ${state.fcCards.length} cards.`);
+        renderFlashcardPicker();
+      }
+    });
+  });
+
+  document.getElementById('fcBackBtn').addEventListener('click', renderFlashcardPicker);
+
+  // ========== REVIEW MODE ==========
+  function renderReview() {
+    const container = document.getElementById('reviewContent');
+    if (progress.wrongAnswers.length === 0) {
+      container.innerHTML = '<div class="review-empty"><div class="review-empty-icon">✅</div><p>No wrong answers to review! Keep it up!</p></div>';
+      return;
+    }
+
+    container.innerHTML = `
+      <div class="flex-between mb-16">
+        <span style="font-size:14px;color:var(--text-secondary);">${progress.wrongAnswers.length} questions to review</span>
+        <button class="btn btn-ghost btn-sm" id="clearWrongBtn">🗑 Clear All</button>
+      </div>
+    `;
+
+    progress.wrongAnswers.forEach((wa, idx) => {
+      const correctLetters = wa.correctAnswers.map(i => String.fromCharCode(65 + i)).join(', ');
+      const userLetters = wa.userAnswers.map(i => String.fromCharCode(65 + i)).join(', ');
+
+      const div = document.createElement('div');
+      div.className = 'card mb-16';
+      div.style.padding = '20px';
+
+      let trapsHtml = '';
+      if (wa.traps) {
+        trapsHtml = Object.entries(wa.traps).map(([k, v]) =>
+          `<div class="quiz-trap-item"><span class="quiz-trap-label">${k}:</span><span>${v}</span></div>`
+        ).join('');
+        trapsHtml = `<div class="quiz-traps" style="margin-top:12px;padding-top:12px;"><h5>🪤 Traps</h5>${trapsHtml}</div>`;
+      }
+
+      div.innerHTML = `
+        <div class="flex-between mb-8">
+          <span class="quiz-question-number">Lecture ${wa.lectureId}</span>
+          <button class="btn btn-ghost btn-sm remove-wrong" data-qid="${wa.questionId}">✕ Remove</button>
+        </div>
+        <p style="font-weight:600;margin-bottom:8px;line-height:1.6;">${wa.question}</p>
+        ${wa.options ? wa.options.map((o, i) => {
+          const letter = String.fromCharCode(65 + i);
+          const isCorrect = wa.correctAnswers.includes(i);
+          const isUser = wa.userAnswers.includes(i);
+          let style = '';
+          if (isCorrect) style = 'color:var(--green);font-weight:600;';
+          else if (isUser) style = 'color:var(--red);text-decoration:line-through;';
+          return `<p style="font-size:13px;${style}">${letter}. ${o}</p>`;
+        }).join('') : ''}
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:10px;">💡 ${wa.explanation}</p>
+        ${trapsHtml}
+      `;
+      container.appendChild(div);
+    });
+
+    // Event listeners
+    document.getElementById('clearWrongBtn')?.addEventListener('click', () => {
+      if (confirm('Clear all wrong answers?')) {
+        progress.wrongAnswers = [];
+        saveProgress(progress);
+        renderReview();
+        updateStats();
+      }
+    });
+
+    container.querySelectorAll('.remove-wrong').forEach(btn => {
+      btn.addEventListener('click', () => {
+        removeWrongAnswer(parseInt(btn.dataset.qid));
+        renderReview();
+        updateStats();
+      });
+    });
+  }
+
+  function addWrongAnswer(q, userAnswers) {
+    // Don't duplicate
+    const existing = progress.wrongAnswers.findIndex(w => w.questionId === q.id);
+    const entry = {
+      questionId: q.id,
+      lectureId: q.lectureId,
+      question: q.question,
+      options: q.options,
+      correctAnswers: q.correctAnswers,
+      userAnswers: [...userAnswers],
+      explanation: q.explanation,
+      traps: q.traps,
+    };
+    if (existing >= 0) {
+      progress.wrongAnswers[existing] = entry;
+    } else {
+      progress.wrongAnswers.push(entry);
+    }
+    saveProgress(progress);
+  }
+
+  function removeWrongAnswer(questionId) {
+    progress.wrongAnswers = progress.wrongAnswers.filter(w => w.questionId !== questionId);
+    saveProgress(progress);
+  }
+
+  // ========== UTILITIES ==========
+  function shuffleArray(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function arraysEqual(a, b) {
+    if (a.length !== b.length) return false;
+    return a.every((v, i) => v === b[i]);
+  }
+
+  // ========== INIT ==========
+  renderLectureNav();
+  renderDashboard();
+
+})();
+</script>
+
+</body>
+</html>
