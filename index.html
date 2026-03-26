@@ -237,6 +237,10 @@
                 <h3>📊 Difficulty</h3>
                 <div class="checkbox-grid" id="quizDifficultySelect">
                   <label class="checkbox-item"
+                    ><input type="checkbox" data-role="select-all" checked />
+                    Select All</label
+                  >
+                  <label class="checkbox-item"
                     ><input type="checkbox" value="Easy" checked /> 🟢
                     Easy</label
                   >
@@ -253,6 +257,10 @@
               <div class="quiz-config-section">
                 <h3>📝 Question Type</h3>
                 <div class="checkbox-grid" id="quizTypeSelect">
+                  <label class="checkbox-item"
+                    ><input type="checkbox" data-role="select-all" checked />
+                    Select All</label
+                  >
                   <label class="checkbox-item"
                     ><input type="checkbox" value="multiple-choice" checked />
                     Single Answer</label
@@ -930,7 +938,11 @@
 
         function renderQuizLectureCheckboxes() {
           const container = document.getElementById("quizLectureSelect");
-          container.innerHTML = "";
+          container.innerHTML = `
+            <label class="checkbox-item">
+              <input type="checkbox" data-role="select-all" checked /> Select All
+            </label>
+          `;
           LECTURES.forEach((lec) => {
             const count = QUIZ_BANK.filter(
               (q) => q.lectureId === lec.id,
@@ -940,6 +952,39 @@
             label.innerHTML = `<input type="checkbox" value="${lec.id}" checked> L${lec.id}: ${lec.title} <span style="margin-left:auto;font-size:10px;color:var(--text-muted);">(${count})</span>`;
             container.appendChild(label);
           });
+          setupQuizCheckboxGroup("quizLectureSelect");
+        }
+
+        function setupQuizCheckboxGroup(containerId) {
+          const container = document.getElementById(containerId);
+          if (!container) return;
+
+          const selectAll = container.querySelector('input[data-role="select-all"]');
+          const items = [
+            ...container.querySelectorAll('input[type="checkbox"]:not([data-role="select-all"])'),
+          ];
+
+          if (!selectAll || items.length === 0) return;
+
+          const syncSelectAllState = () => {
+            const checkedCount = items.filter((item) => item.checked).length;
+            selectAll.checked = checkedCount === items.length;
+            selectAll.indeterminate =
+              checkedCount > 0 && checkedCount < items.length;
+          };
+
+          selectAll.addEventListener("change", () => {
+            items.forEach((item) => {
+              item.checked = selectAll.checked;
+            });
+            selectAll.indeterminate = false;
+          });
+
+          items.forEach((item) => {
+            item.addEventListener("change", syncSelectAllState);
+          });
+
+          syncSelectAllState();
         }
 
         // Slider
@@ -948,6 +993,8 @@
         slider.addEventListener("input", () => {
           sliderLabel.textContent = slider.value;
         });
+        setupQuizCheckboxGroup("quizDifficultySelect");
+        setupQuizCheckboxGroup("quizTypeSelect");
 
         // Start quiz
         document
@@ -956,13 +1003,19 @@
 
         function startQuiz() {
           const selectedLectures = [
-            ...document.querySelectorAll("#quizLectureSelect input:checked"),
+            ...document.querySelectorAll(
+              '#quizLectureSelect input:checked:not([data-role="select-all"])',
+            ),
           ].map((c) => parseInt(c.value));
           const selectedDiffs = [
-            ...document.querySelectorAll("#quizDifficultySelect input:checked"),
+            ...document.querySelectorAll(
+              '#quizDifficultySelect input:checked:not([data-role="select-all"])',
+            ),
           ].map((c) => c.value);
           const selectedTypes = [
-            ...document.querySelectorAll("#quizTypeSelect input:checked"),
+            ...document.querySelectorAll(
+              '#quizTypeSelect input:checked:not([data-role="select-all"])',
+            ),
           ].map((c) => c.value);
           const count = parseInt(slider.value);
 
