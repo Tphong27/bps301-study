@@ -1033,17 +1033,10 @@
     `;
           }
 
-          // Navigation visibility: allow going back even before answering current question
+          // Navigation visibility: allow skipping unanswered questions
           prevBtn.style.display = idx > 0 ? "inline-flex" : "none";
-          if (existingResult || idx > 0) {
-            nav.classList.remove("hidden");
-          }
-
-          if (!existingResult) {
-            nextBtn.classList.add("hidden");
-          } else {
-            nextBtn.classList.remove("hidden");
-          }
+          nav.classList.remove("hidden");
+          nextBtn.classList.remove("hidden");
         }
 
         function handleOptionClick(optEl, q) {
@@ -1175,7 +1168,6 @@
         document
           .getElementById("nextQuestionBtn")
           .addEventListener("click", () => {
-            if (!state.quizResults[state.quizIndex]) return;
             if (state.quizIndex < state.quizQuestions.length - 1) {
               state.quizIndex++;
               renderQuizQuestion();
@@ -1195,10 +1187,10 @@
           document.getElementById("quizActive").classList.add("hidden");
           document.getElementById("quizResults").classList.remove("hidden");
 
-          const finalizedResults = state.quizResults.filter((r) => r !== null);
-          const correct = finalizedResults.filter((r) => r.correct).length;
-          const total = finalizedResults.length;
-          const pct = Math.round((correct / total) * 100);
+          const answeredResults = state.quizResults.filter((r) => r !== null);
+          const correct = answeredResults.filter((r) => r.correct).length;
+          const total = state.quizQuestions.length;
+          const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
 
           document.getElementById("scoreValue").textContent = pct + "%";
           document.getElementById("correctCount").textContent = correct;
@@ -1232,7 +1224,20 @@
           saveProgress(progress);
 
           // Render mistakes
-          const mistakes = finalizedResults.filter((r) => !r.correct);
+          const mistakes = state.quizQuestions
+            .map((q, i) => {
+              const result = state.quizResults[i];
+              if (!result) {
+                return {
+                  question: q,
+                  userAnswers: [],
+                  correct: false,
+                  skipped: true,
+                };
+              }
+              return { ...result, skipped: false };
+            })
+            .filter((r) => !r.correct);
           const list = document.getElementById("resultsMistakesList");
           if (mistakes.length > 0) {
             list.innerHTML =
@@ -1242,9 +1247,11 @@
               const correctLetters = q.correctAnswers
                 .map((idx) => String.fromCharCode(65 + idx))
                 .join(", ");
-              const userLetters = m.userAnswers
-                .map((idx) => String.fromCharCode(65 + idx))
-                .join(", ");
+              const userLetters = m.skipped
+                ? "Skipped"
+                : m.userAnswers
+                    .map((idx) => String.fromCharCode(65 + idx))
+                    .join(", ");
               list.innerHTML += `
           <div class="card mb-16" style="padding:20px;">
             <div class="quiz-question-meta mb-8">
