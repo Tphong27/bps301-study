@@ -1499,6 +1499,15 @@
           return lecture ? lecture.title : "";
         }
 
+        function formatAnswerOption(optionText, optionIndex) {
+          const letter = String.fromCharCode(65 + optionIndex);
+          const normalizedText = (optionText || "").replace(
+            /^[A-D]\.\s*/i,
+            "",
+          );
+          return `${letter}. ${normalizedText}`;
+        }
+
         function renderQuestionBank() {
           const container = document.getElementById("questionBankContent");
           const summary = document.getElementById("questionBankSummary");
@@ -1555,13 +1564,9 @@
           container.innerHTML = questions
             .map((q, index) => {
               const lectureTitle = getLectureTitle(q.lectureId);
-              const correctLetters = q.correctAnswers
-                .map((idx) => String.fromCharCode(65 + idx))
-                .join(", ");
               const correctAnswerText = q.correctAnswers
                 .map((idx) => {
-                  const letter = String.fromCharCode(65 + idx);
-                  return `${letter}. ${q.options[idx]}`;
+                  return formatAnswerOption(q.options[idx], idx);
                 })
                 .join(" | ");
               const answerLabel =
@@ -1619,8 +1624,7 @@
                   <div class="quiz-question-text">${q.question}</div>
                   <div class="question-bank-options">${optionsHtml}</div>
                   <div class="question-bank-answer">
-                    <strong>${answerLabel}:</strong> ${correctLetters}<br />
-                    ${correctAnswerText}
+                    <strong>${answerLabel}:</strong> ${correctAnswerText}
                   </div>
                   <div class="question-bank-explanation">
                     <strong>Explanation:</strong> ${q.explanation}
