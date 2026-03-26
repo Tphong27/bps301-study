@@ -322,6 +322,9 @@
                 id="quizNavButtons"
                 class="hidden"
               >
+                <button class="btn btn-secondary" id="prevQuestionBtn">
+                  ← Previous
+                </button>
                 <button class="btn btn-primary" id="nextQuestionBtn">
                   Next →
                 </button>
@@ -515,6 +518,7 @@
     <script src="data/lecture09.js"></script>
     <script src="data/lecture10.js"></script>
     <script src="data/lecture11.js"></script>
+    <script src="data/quiz_extra_50.js"></script>
     <script src="data/index.js"></script>
 
     <!-- App Logic -->
@@ -909,7 +913,7 @@
 
           state.quizQuestions = pool;
           state.quizIndex = 0;
-          state.quizResults = [];
+          state.quizResults = Array(pool.length).fill(null);
           state.quizAnswered = false;
           state.quizSelectedAnswers = [];
 
@@ -924,15 +928,24 @@
           const q = state.quizQuestions[state.quizIndex];
           const total = state.quizQuestions.length;
           const idx = state.quizIndex;
+          const existingResult = state.quizResults[idx];
+          const nav = document.getElementById("quizNavButtons");
+          const prevBtn = document.getElementById("prevQuestionBtn");
+          const nextBtn = document.getElementById("nextQuestionBtn");
+          const staleSubmitBtn = document.getElementById("multiSubmitBtn");
+          if (staleSubmitBtn) staleSubmitBtn.remove();
 
           document.getElementById("quizProgressText").textContent =
             `${idx + 1} / ${total}`;
           document.getElementById("quizProgressFill").style.width =
             ((idx + 1) / total) * 100 + "%";
 
-          state.quizAnswered = false;
-          state.quizSelectedAnswers = [];
-          document.getElementById("quizNavButtons").classList.add("hidden");
+          state.quizAnswered = !!existingResult;
+          state.quizSelectedAnswers = existingResult
+            ? [...existingResult.userAnswers]
+            : [];
+          nav.classList.add("hidden");
+          nextBtn.textContent = idx === total - 1 ? "Finish Quiz" : "Next →";
 
           const card = document.getElementById("quizQuestionCard");
           const isMulti = q.type === "multiple-answer";
@@ -980,6 +993,57 @@
           card.querySelectorAll(".quiz-option").forEach((opt) => {
             opt.addEventListener("click", () => handleOptionClick(opt, q));
           });
+
+          // Show answered state when user navigates back/forward
+          if (existingResult) {
+            const options = card.querySelectorAll(".quiz-option");
+            options.forEach((opt) => {
+              const i = parseInt(opt.dataset.index);
+              opt.classList.add("disabled");
+              if (q.correctAnswers.includes(i)) {
+                opt.classList.add("correct");
+              } else if (existingResult.userAnswers.includes(i)) {
+                opt.classList.add("incorrect");
+              }
+            });
+
+            const area = document.getElementById("explanationArea");
+            let trapsHtml = "";
+            if (q.traps) {
+              const trapItems = Object.entries(q.traps)
+                .filter(
+                  ([key]) => !q.correctAnswers.includes(key.charCodeAt(0) - 65),
+                )
+                .map(
+                  ([key, val]) =>
+                    `<div class="quiz-trap-item"><span class="quiz-trap-label">${key}:</span><span>${val}</span></div>`,
+                )
+                .join("");
+              if (trapItems) {
+                trapsHtml = `<div class="quiz-traps"><h5>🪤 Trap Analysis</h5>${trapItems}</div>`;
+              }
+            }
+
+            area.innerHTML = `
+      <div class="quiz-explanation">
+        <h4>${existingResult.correct ? "✅ Correct!" : "❌ Incorrect"}</h4>
+        <p>${q.explanation}</p>
+        ${trapsHtml}
+      </div>
+    `;
+          }
+
+          // Navigation visibility: allow going back even before answering current question
+          prevBtn.style.display = idx > 0 ? "inline-flex" : "none";
+          if (existingResult || idx > 0) {
+            nav.classList.remove("hidden");
+          }
+
+          if (!existingResult) {
+            nextBtn.classList.add("hidden");
+          } else {
+            nextBtn.classList.remove("hidden");
+          }
         }
 
         function handleOptionClick(optEl, q) {
@@ -1053,11 +1117,11 @@
           });
 
           // Record result
-          state.quizResults.push({
+          state.quizResults[state.quizIndex] = {
             question: q,
             userAnswers: [...state.quizSelectedAnswers],
             correct: isCorrect,
-          });
+          };
 
           // Save wrong answer for review
           if (!isCorrect) {
@@ -1097,10 +1161,21 @@
           document.getElementById("nextQuestionBtn").classList.remove("hidden");
         }
 
+        // Previous question
+        document
+          .getElementById("prevQuestionBtn")
+          .addEventListener("click", () => {
+            if (state.quizIndex > 0) {
+              state.quizIndex--;
+              renderQuizQuestion();
+            }
+          });
+
         // Next question
         document
           .getElementById("nextQuestionBtn")
           .addEventListener("click", () => {
+            if (!state.quizResults[state.quizIndex]) return;
             if (state.quizIndex < state.quizQuestions.length - 1) {
               state.quizIndex++;
               renderQuizQuestion();
@@ -1120,8 +1195,9 @@
           document.getElementById("quizActive").classList.add("hidden");
           document.getElementById("quizResults").classList.remove("hidden");
 
-          const correct = state.quizResults.filter((r) => r.correct).length;
-          const total = state.quizResults.length;
+          const finalizedResults = state.quizResults.filter((r) => r !== null);
+          const correct = finalizedResults.filter((r) => r.correct).length;
+          const total = finalizedResults.length;
           const pct = Math.round((correct / total) * 100);
 
           document.getElementById("scoreValue").textContent = pct + "%";
@@ -1156,7 +1232,7 @@
           saveProgress(progress);
 
           // Render mistakes
-          const mistakes = state.quizResults.filter((r) => !r.correct);
+          const mistakes = finalizedResults.filter((r) => !r.correct);
           const list = document.getElementById("resultsMistakesList");
           if (mistakes.length > 0) {
             list.innerHTML =
