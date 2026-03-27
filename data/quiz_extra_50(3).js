@@ -219,13 +219,13 @@
       type: "true-false",
       difficulty: "Easy",
       question:
-        "The lecture presents incremental improvement and BPR as points on a spectrum rather than as a strict either-or choice.",
+        "BPR sits closer to the transformational end of the redesign spectrum than incremental improvement does.",
       options: ["A. True", "B. False"],
       correctAnswers: [0],
       explanation:
-        "The lecture explicitly states that incremental improvement and BPR exist on a spectrum, and many real improvements lie somewhere in between.",
+        "Incremental improvement is the milder end of the spectrum, while BPR represents the more radical redesign end.",
       traps: {
-        B: "This would contradict the stated view that redesign approaches are not simply binary.",
+        B: "This would reverse the relative radicalness of the two approaches.",
       },
     },
     {
@@ -278,20 +278,20 @@
       type: "multiple-choice",
       difficulty: "Hard",
       question:
-        "According to the Devil's Quadrangle, which set of dimensions must be considered together in redesign decisions?",
+        "According to the Devil's Quadrangle, which dimension refers to the ability to handle variety or adapt to different needs?",
       options: [
-        "A. Time, Cost, Quality, Flexibility",
-        "B. Time, Cost, Revenue, Compliance",
-        "C. Speed, Accuracy, Budget, Headcount",
-        "D. Quality, Strategy, IT, Governance",
+        "A. Flexibility",
+        "B. Governance",
+        "C. Revenue",
+        "D. Compliance",
       ],
       correctAnswers: [0],
       explanation:
-        "The Devil's Quadrangle consists of Time, Cost, Quality, and Flexibility, and emphasizes trade-offs among them.",
+        "Flexibility is the quadrangle dimension that captures the ability to cope with variety, change, or different case needs.",
       traps: {
-        B: "Revenue and compliance are important in business, but they are not the four dimensions of the quadrangle.",
-        C: "These are plausible operational concerns, but not the formal quadrangle dimensions.",
-        D: "Strategy, IT, and governance are not part of the Devil's Quadrangle framework.",
+        B: "Governance is important in BPM maturity, but it is not one of the four quadrangle dimensions.",
+        C: "Revenue is a business outcome, not a dimension in the Devil's Quadrangle.",
+        D: "Compliance may matter in redesign, but it is not one of the four named dimensions here.",
       },
     },
     {
@@ -344,20 +344,20 @@
       type: "multiple-choice",
       difficulty: "Medium",
       question:
-        "Which heuristic aims to reduce unnecessary management checks by giving workers more authority?",
+        "Which heuristic most directly reduces handoffs by merging several small related tasks into one larger chunk of work?",
       options: [
         "A. Triage",
-        "B. Empower",
-        "C. Buffering",
+        "B. Buffering",
+        "C. Task composition",
         "D. Parallelism",
       ],
-      correctAnswers: [1],
+      correctAnswers: [2],
       explanation:
-        "The empower heuristic gives workers more authority so fewer management checks are needed.",
+        "Task composition combines fragmented activities into a larger work package, reducing transfers and coordination overhead.",
       traps: {
-        A: "Triage creates different paths for different case categories.",
-        C: "Buffering concerns change notifications versus polling.",
-        D: "Parallelism executes independent tasks simultaneously.",
+        A: "Triage separates cases into different handling paths rather than combining tasks.",
+        B: "Buffering is about notifications versus polling, not about merging work steps.",
+        D: "Parallelism overlaps activities in time but does not merge them into one chunk of work.",
       },
     },
     {
@@ -836,20 +836,20 @@
       type: "multiple-choice",
       difficulty: "Medium",
       question:
-        "Which discovery method is most likely to be objective but still miss informal practices?",
+        "Which discovery method is most likely to uncover tacit knowledge from one stakeholder in depth?",
       options: [
         "A. Evidence-based discovery",
         "B. Interview-based discovery",
         "C. Workshop-based discovery",
         "D. Root-cause discovery",
       ],
-      correctAnswers: [0],
+      correctAnswers: [1],
       explanation:
-        "Evidence-based discovery relies on documents and systems, making it more objective but also more likely to miss informal workarounds.",
+        "Interview-based discovery allows detailed one-on-one probing, making it especially useful for surfacing tacit knowledge held by an individual domain expert.",
       traps: {
-        B: "Interviews reveal tacit and informal practices more easily.",
-        C: "Workshops can surface shared informal realities through discussion.",
-        D: "Root-cause discovery is not one of the process discovery methods listed.",
+        A: "Evidence-based discovery is more document-driven and may miss tacit human know-how.",
+        C: "Workshops are useful for reconciliation across stakeholders, but less focused on one person's detailed tacit knowledge.",
+        D: "Root-cause discovery is not one of the main discovery methods listed in the lecture.",
       },
     },
     {
@@ -1027,18 +1027,18 @@
       type: "multiple-answer",
       difficulty: "Hard",
       question:
-        "Which attributes are typical event-log fields according to the lecture? (Select ALL that apply)",
+        "Which statements about event logs and traces are correct according to the lecture? (Select ALL that apply)",
       options: [
-        "A. Case ID",
-        "B. Activity name",
-        "C. Timestamp",
-        "D. Company revenue target",
+        "A. Each row in an event log typically represents one event",
+        "B. A trace is the ordered sequence of activities for one case",
+        "C. XES is a standard XML format for event logs",
+        "D. Case ID can be replaced by a gateway label without losing trace structure",
       ],
       correctAnswers: [0, 1, 2],
       explanation:
-        "Typical event-log attributes include Case ID, Activity name, Timestamp, and often Resource and other event attributes.",
+        "The lecture states that event logs record events row by row, traces are ordered case-level sequences, and XES is the standard XML event-log format.",
       traps: {
-        D: "Revenue target is a business metric, not a standard event-level execution attribute.",
+        D: "Case identification is essential for grouping events into traces; gateway labels cannot replace that role.",
       },
     },
     {

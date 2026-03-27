@@ -268,13 +268,13 @@
       type: "true-false",
       difficulty: "Hard",
       question:
-        "A non-interrupting boundary event starts an exception path while allowing the original activity to continue.",
+        "An interrupting boundary event cancels the activity it is attached to when the exception is triggered.",
       options: ["A. True", "B. False"],
       correctAnswers: [0],
       explanation:
-        "Non-interrupting boundary events trigger parallel handling without canceling the host activity.",
+        "Interrupting boundary events stop the host activity and redirect execution to the exception path.",
       traps: {
-        B: "Canceling the activity is behavior of interrupting, not non-interrupting boundary events.",
+        B: "Allowing the original activity to continue would describe a non-interrupting boundary event instead.",
       },
     },
     {
@@ -334,13 +334,13 @@
       type: "true-false",
       difficulty: "Hard",
       question:
-        "Applying parallelism always improves all four performance dimensions in the Devil's Quadrangle.",
+        "In the Devil's Quadrangle, improving one performance dimension may require trade-offs in another.",
       options: ["A. True", "B. False"],
-      correctAnswers: [1],
+      correctAnswers: [0],
       explanation:
-        "Parallelism often improves time but may worsen cost, quality consistency, or flexibility depending on context.",
+        "The Devil's Quadrangle emphasizes trade-offs among time, cost, quality, and flexibility rather than guaranteed win-win redesign.",
       traps: {
-        A: "No redesign heuristic guarantees universal improvement across all dimensions.",
+        B: "This would deny the core reason the quadrangle is used in redesign analysis.",
       },
     },
     {
@@ -438,13 +438,13 @@
       type: "true-false",
       difficulty: "Medium",
       question:
-        "In BPMN, sequence flow may cross pool boundaries if both pools belong to the same company.",
+        "In BPMN, message flow can connect participants across pools, but it does not control execution order inside a pool.",
       options: ["A. True", "B. False"],
-      correctAnswers: [1],
+      correctAnswers: [0],
       explanation:
-        "Sequence flow cannot cross pool boundaries; inter-pool communication uses message flow.",
+        "Message flow models communication between participants in different pools. Sequence flow, not message flow, defines the order of activities inside one pool.",
       traps: {
-        A: "Pool boundary is a strict execution boundary regardless of ownership context.",
+        B: "This would confuse inter-participant communication with intra-pool control flow.",
       },
     },
     {
@@ -562,40 +562,42 @@
       type: "multiple-choice",
       difficulty: "Medium",
       question:
-        "Which BPMS component is most directly responsible for presenting pending human tasks to users?",
+        "Which BPMS component is mainly used to monitor KPIs and process performance in real time?",
       options: [
         "A. Process model repository",
-        "B. Rule engine",
-        "C. Integration adapter",
-        "D. Worklist handler",
+        "B. Monitoring Dashboard (BAM)",
+        "C. Worklist handler",
+        "D. Execution engine",
       ],
-      correctAnswers: [3],
+      correctAnswers: [1],
       explanation:
-        "The worklist handler (or task inbox) exposes assigned human work items for execution.",
+        "The monitoring dashboard, often labeled BAM, provides real-time visibility into KPIs and process performance.",
       traps: {
-        A: "Repository stores models but does not manage user task queues.",
-        B: "Rule engines evaluate decisions, not user inbox presentation.",
-        C: "Adapters connect systems; they do not manage human task lists.",
+        A: "A repository stores model artifacts rather than live operational metrics.",
+        C: "The worklist handler presents human tasks, not KPI dashboards.",
+        D: "The execution engine routes and executes process logic instead of visualizing performance metrics.",
       },
     },
     {
       id: 1232,
       lectureId: 11,
-      type: "multiple-answer",
-      difficulty: "Hard",
+      type: "multiple-choice",
+      difficulty: "Medium",
       question:
-        "Which are typical attributes in a process mining event log? (Select ALL that apply)",
+        "Which event-log attribute most directly records who performed an activity instance?",
       options: [
         "A. Case ID",
-        "B. Activity name",
+        "B. Resource",
         "C. Timestamp",
-        "D. Board-level strategic objective text",
+        "D. XES format",
       ],
-      correctAnswers: [0, 1, 2],
+      correctAnswers: [1],
       explanation:
-        "Event logs generally include case, activity, and time; strategic objective text is not standard event-level execution data.",
+        "The resource attribute captures who performed the event. Case ID identifies the process instance, timestamp records when it happened, and XES is a storage format.",
       traps: {
-        D: "Strategy documents guide governance, but they are not core event trace attributes.",
+        A: "Case ID groups events into the same process instance rather than identifying the performer.",
+        C: "Timestamp records when an event occurred, not who executed it.",
+        D: "XES is the event-log file standard, not a field describing one event performer.",
       },
     },
     {

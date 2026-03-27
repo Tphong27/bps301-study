@@ -128,13 +128,13 @@
       type: "true-false",
       difficulty: "Hard",
       question:
-        "A process landscape model becomes more accurate when it includes detailed gateways and events for each Level 1 process.",
+        "A process landscape model is intended to show high-level process areas and relationships rather than detailed gateways and events.",
       options: ["A. True", "B. False"],
-      correctAnswers: [1],
+      correctAnswers: [0],
       explanation:
-        "Adding detailed flow logic to a landscape model usually reduces clarity and violates the purpose of Level 1 abstraction.",
+        "Landscape models are architectural and high-level. Detailed gateway and event logic belongs in lower-level process models, not in the landscape view.",
       traps: {
-        A: "More detail is not the same as better architecture modeling; it often makes the view less useful.",
+        B: "This would confuse a process architecture view with a detailed BPMN flow model.",
       },
     },
     {
@@ -480,20 +480,20 @@
       type: "multiple-choice",
       difficulty: "Medium",
       question:
-        "A legally required verification step that customers would not willingly pay extra for is best classified as:",
+        "Entering the same customer data into a second internal system with no legal or customer benefit is best classified as:",
       options: [
         "A. VA",
         "B. BVA",
         "C. NVA",
         "D. Hold waste",
       ],
-      correctAnswers: [1],
+      correctAnswers: [2],
       explanation:
-        "Business Value-Adding work is required for the business to operate or remain compliant, even if customers do not directly value it.",
+        "Duplicating data entry without customer value or business necessity is Non-Value-Adding work and is a candidate for elimination.",
       traps: {
-        A: "Direct customer willingness to pay is the hallmark of VA, not this case.",
-        C: "A legally required step is not mere waste to be eliminated blindly.",
-        D: "Hold waste refers to waiting or idle time, not compliance work.",
+        A: "Customers would not pay for repeated internal re-entry of the same information.",
+        B: "BVA requires a business necessity such as compliance or control, which is absent here.",
+        D: "Hold waste is idle waiting, not unnecessary duplicate processing.",
       },
     },
     {
@@ -640,13 +640,13 @@
       type: "true-false",
       difficulty: "Medium",
       question:
-        "The lecture presents incremental improvement and BPR as endpoints on a spectrum rather than mutually exclusive camps.",
+        "Analytical methods sit between low-risk transactional tweaks and radical transformational redesign on the Redesign Orbit.",
       options: ["A. True", "B. False"],
       correctAnswers: [0],
       explanation:
-        "The material explicitly treats improvement approaches as lying on a spectrum, with many real initiatives falling in between.",
+        "The Redesign Orbit places transactional approaches at the lower-risk end, transformational approaches at the radical end, and analytical methods in between.",
       traps: {
-        B: "This would incorrectly impose a strict either-or distinction.",
+        B: "This would misplace analytical methods relative to the two ends of the orbit.",
       },
     },
     {
@@ -655,20 +655,20 @@
       type: "multiple-choice",
       difficulty: "Hard",
       question:
-        "Which redesign approach is best described as data-driven optimization using mathematical reasoning rather than heuristics or radical reinvention?",
+        "Which redesign approach relies primarily on heuristics and smaller-scope changes rather than mathematical optimization or radical reinvention?",
       options: [
         "A. Transactional methods",
         "B. Analytical methods",
         "C. Transformational methods",
-        "D. Manual methods",
+        "D. Mining methods",
       ],
-      correctAnswers: [1],
+      correctAnswers: [0],
       explanation:
-        "Analytical methods sit in the middle of the Redesign Orbit and rely on data and models to improve process design.",
+        "Transactional methods emphasize practical heuristics and relatively limited process changes, usually with lower risk than transformational redesign.",
       traps: {
-        A: "Transactional methods rely more on rules of thumb and smaller changes.",
-        C: "Transformational methods are radical and typically not defined by mathematical optimization.",
-        D: "Manual methods are not a redesign-orbit category from the lecture.",
+        B: "Analytical methods are the data- and model-driven redesign approach.",
+        C: "Transformational methods are the radical end of the redesign spectrum.",
+        D: "Mining methods are not one of the Redesign Orbit categories from the lecture.",
       },
     },
     {
@@ -699,20 +699,20 @@
       type: "multiple-choice",
       difficulty: "Medium",
       question:
-        "Which heuristic is most directly aimed at reducing unnecessary management escalation by shifting decision authority downward?",
+        "Which redesign move best keeps the normal path simple by routing unusual cases to a separate handling path?",
       options: [
-        "A. Empower",
-        "B. Buffering",
-        "C. Triage",
-        "D. Task composition",
+        "A. Give frontline staff more approval authority",
+        "B. Create a clean normal path and route unusual exceptions to a separate handling path",
+        "C. Merge several small tasks into one role",
+        "D. Subscribe to notifications instead of polling",
       ],
-      correctAnswers: [0],
+      correctAnswers: [1],
       explanation:
-        "Empower gives workers more authority so that fewer cases need to be escalated for approval.",
+        "This is the logic of exception handling: keep the standard path clean and route non-routine situations to a separate exception path.",
       traps: {
-        B: "Buffering is about change notifications versus repeated polling.",
-        C: "Triage separates cases into differentiated handling paths.",
-        D: "Task composition combines tasks to reduce handoffs.",
+        A: "This describes empower, which changes decision authority rather than exception routing.",
+        C: "This describes task composition, which reduces handoffs but does not separate exceptional cases.",
+        D: "This describes buffering, which addresses update signaling rather than exception paths.",
       },
     },
     {
@@ -780,18 +780,18 @@
       question:
         "Which item belongs to the Process Model Canvas rather than BPMN notation?",
       options: [
-        "A. Customer segments",
+        "A. Key partners",
         "B. XOR gateway",
         "C. Boundary event",
-        "D. Message flow",
+        "D. Data store",
       ],
       correctAnswers: [0],
       explanation:
-        "Customer segments is one of the Process Model Canvas areas. The other options are BPMN modeling constructs.",
+        "Key partners is one of the Process Model Canvas areas. The other options are BPMN constructs used in process modeling.",
       traps: {
         B: "An XOR gateway is a BPMN routing element.",
         C: "A boundary event is a BPMN event construct.",
-        D: "A message flow is a BPMN collaboration connection.",
+        D: "A data store is a BPMN artifact for persistent information.",
       },
     },
     {
@@ -958,20 +958,20 @@
       type: "multiple-choice",
       difficulty: "Hard",
       question:
-        "An organization has documented BPM methods and tools, but process decision rights and accountability remain unclear. Which maturity success factor is weakest?",
+        "An organization has executive sponsorship and clear decision forums, but each unit uses different modeling approaches and tool conventions. Which maturity success factor is weakest?",
       options: [
-        "A. Methods",
-        "B. Governance",
+        "A. Governance",
+        "B. Methods",
         "C. IT",
         "D. Culture",
       ],
       correctAnswers: [1],
       explanation:
-        "Governance is about clear roles, accountability, and decision structures. The scenario states those are exactly what is missing.",
+        "Methods covers the existence of standardized BPM methods and tools. If every unit uses different approaches and conventions, that factor is weak.",
       traps: {
-        A: "Methods are already documented in the scenario.",
-        C: "The problem described is organizational accountability, not technology infrastructure.",
-        D: "Culture concerns values and awareness; the sharper issue here is governance structure.",
+        A: "The scenario says decision forums are clear, so governance is not the main weakness here.",
+        C: "The issue is inconsistency of methods and conventions, not lack of technology infrastructure.",
+        D: "Culture concerns shared values and awareness, but the sharper problem described is lack of standardized methods.",
       },
     },
     {
