@@ -504,7 +504,10 @@
         <div class="view" id="view-question-bank">
           <div class="page-header">
             <h2>Question Bank Review</h2>
-            <p>Review the full question bank with correct answers and explanations</p>
+            <p>
+              Review the full question bank with correct answers and
+              explanations
+            </p>
           </div>
 
           <div class="card" style="margin-bottom: 20px">
@@ -834,14 +837,70 @@
         // Language toggle
         document.querySelectorAll(".study-lang-btn").forEach((btn) => {
           btn.addEventListener("click", () => {
+            const anchor = captureStudyScrollAnchor();
             document
               .querySelectorAll(".study-lang-btn")
               .forEach((b) => b.classList.remove("active"));
             btn.classList.add("active");
             state.studyLang = btn.dataset.lang;
             renderStudyContent();
+            restoreStudyScrollAnchor(anchor);
           });
         });
+
+        function captureStudyScrollAnchor() {
+          if (!state.studyLecture || state.currentView !== "study") return null;
+
+          const sections = Array.from(
+            document.querySelectorAll("#studyContent .study-section"),
+          );
+          if (sections.length === 0) return null;
+
+          const anchorLineOffset = 120;
+          const anchorLine = window.scrollY + anchorLineOffset;
+          let sectionIndex = 0;
+
+          for (let i = 0; i < sections.length; i++) {
+            const sectionTop =
+              sections[i].getBoundingClientRect().top + window.scrollY;
+            if (sectionTop <= anchorLine) sectionIndex = i;
+            else break;
+          }
+
+          const sectionTop =
+            sections[sectionIndex].getBoundingClientRect().top + window.scrollY;
+
+          return {
+            sectionIndex,
+            offsetInSection: Math.max(0, anchorLine - sectionTop),
+            anchorLineOffset,
+          };
+        }
+
+        function restoreStudyScrollAnchor(anchor) {
+          if (!anchor || state.currentView !== "study") return;
+
+          requestAnimationFrame(() => {
+            const sections = Array.from(
+              document.querySelectorAll("#studyContent .study-section"),
+            );
+            if (sections.length === 0) return;
+
+            const safeIndex = Math.min(
+              anchor.sectionIndex,
+              sections.length - 1,
+            );
+            const target = sections[safeIndex];
+            const targetTop =
+              target.getBoundingClientRect().top + window.scrollY;
+            const nextScrollTop = Math.max(
+              0,
+              targetTop + anchor.offsetInSection - anchor.anchorLineOffset,
+            );
+
+            window.scrollTo({ top: nextScrollTop, behavior: "auto" });
+          });
+        }
 
         function renderStudyContent() {
           const container = document.getElementById("studyContent");
@@ -963,9 +1022,13 @@
           const container = document.getElementById(containerId);
           if (!container) return;
 
-          const selectAll = container.querySelector('input[data-role="select-all"]');
+          const selectAll = container.querySelector(
+            'input[data-role="select-all"]',
+          );
           const items = [
-            ...container.querySelectorAll('input[type="checkbox"]:not([data-role="select-all"])'),
+            ...container.querySelectorAll(
+              'input[type="checkbox"]:not([data-role="select-all"])',
+            ),
           ];
 
           if (!selectAll || items.length === 0) return;
@@ -1559,19 +1622,18 @@
 
         function formatAnswerOption(optionText, optionIndex) {
           const letter = String.fromCharCode(65 + optionIndex);
-          const normalizedText = (optionText || "").replace(
-            /^[A-D]\.\s*/i,
-            "",
-          );
+          const normalizedText = (optionText || "").replace(/^[A-D]\.\s*/i, "");
           return `${letter}. ${normalizedText}`;
         }
 
         function renderQuestionBank() {
           const container = document.getElementById("questionBankContent");
           const summary = document.getElementById("questionBankSummary");
-          const lectureValue = document.getElementById("bankLectureFilter").value;
-          const difficultyValue =
-            document.getElementById("bankDifficultyFilter").value;
+          const lectureValue =
+            document.getElementById("bankLectureFilter").value;
+          const difficultyValue = document.getElementById(
+            "bankDifficultyFilter",
+          ).value;
           const typeValue = document.getElementById("bankTypeFilter").value;
           const searchValue = document
             .getElementById("bankSearchInput")
@@ -1628,7 +1690,9 @@
                 })
                 .join(" | ");
               const answerLabel =
-                q.correctAnswers.length > 1 ? "Correct answers" : "Correct answer";
+                q.correctAnswers.length > 1
+                  ? "Correct answers"
+                  : "Correct answer";
 
               let diffBadge = "";
               if (q.difficulty === "Easy")
