@@ -603,14 +603,25 @@ img {
   max-width: 800px;
 }
 
+.study-toolbar {
+  position: sticky;
+  top: 24px;
+  z-index: 40;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+  padding: 6px 0;
+}
+
 .study-lang-toggle {
   display: flex;
   gap: 4px;
   background: var(--bg-secondary);
+  border: 1px solid var(--border);
   padding: 3px;
   border-radius: var(--radius-sm);
-  margin-bottom: 24px;
   width: fit-content;
+  box-shadow: var(--shadow-sm);
 }
 
 .study-lang-btn {
@@ -732,6 +743,11 @@ img {
 }
 
 @media (max-width: 768px) {
+  .study-toolbar {
+    top: calc(var(--header-height) + 12px);
+    justify-content: center;
+  }
+
   .study-nav-buttons {
     flex-direction: column;
   }
