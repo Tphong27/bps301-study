@@ -69,6 +69,9 @@
           <div class="nav-item" data-view="quiz">
             <span class="nav-item-icon">✍️</span> Quiz
           </div>
+          <div class="nav-item" data-view="exam-pack">
+            <span class="nav-item-icon">✍️</span> Exam Pack
+          </div>
           <div class="nav-item" data-view="question-bank">
             <span class="nav-item-icon">🧾</span> Question Bank
           </div>
@@ -308,7 +311,77 @@
               </button>
             </div>
           </div>
+        </div>
 
+        <!-- ===== EXAM PACK VIEW ===== -->
+        <div class="view" id="view-exam-pack">
+          <div id="examPackConfig">
+            <div class="page-header" style="text-align: center">
+              <h2>Quizlet Exam Pack</h2>
+              <p>
+                Create a separate exam-style quiz from the special question pack
+              </p>
+            </div>
+            <div class="quiz-config" style="max-width: 720px; margin: 0 auto">
+              <div class="quiz-config-section">
+                <h3>ðŸ§ª Special Pack</h3>
+                <p
+                  id="examPackMeta"
+                  style="
+                    margin: 0;
+                    color: var(--text-secondary);
+                    line-height: 1.6;
+                  "
+                >
+                  Loading exam pack...
+                </p>
+              </div>
+              <div class="quiz-config-section">
+                <h3>ðŸ”¢ Number of Questions</h3>
+                <div
+                  style="
+                    display: flex;
+                    gap: 12px;
+                    align-items: center;
+                    flex-wrap: wrap;
+                  "
+                >
+                  <input
+                    type="number"
+                    id="examPackCountInput"
+                    min="1"
+                    step="1"
+                    value="50"
+                    style="
+                      width: 140px;
+                      border: 1px solid var(--border);
+                      background: var(--bg-card);
+                      color: var(--text-heading);
+                      border-radius: 12px;
+                      padding: 12px 14px;
+                      font-size: 16px;
+                      font-weight: 700;
+                    "
+                  />
+                  <span style="color: var(--text-secondary); line-height: 1.6">
+                    Enter any positive number. If you request more than the
+                    unique questions available, the pack will repeat questions
+                    in a new random order.
+                  </span>
+                </div>
+              </div>
+              <button
+                class="btn btn-primary btn-lg btn-block mt-24"
+                id="startExamPackBtn"
+              >
+                ðŸš€ Start Exam Pack
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== QUIZ SESSION VIEW ===== -->
+        <div class="view" id="view-quiz-session">
           <!-- Quiz Active -->
           <div id="quizActive" class="hidden">
             <div class="quiz-active">
@@ -605,6 +678,7 @@
     <script src="data/quiz_extra_50(3).js"></script>
     <script src="data/quiz_extra_50(4).js"></script>
     <script src="data/quiz_compare_40.js"></script>
+    <script src="data/quizlet_exam_pack.js"></script>
     <script src="data/index.js"></script>
 
     <!-- App Logic -->
@@ -623,6 +697,7 @@
           studyLecture: null,
           studyLang: "en",
           // Quiz
+          quizSourceView: "quiz",
           quizQuestions: [],
           quizIndex: 0,
           quizAnswered: false,
@@ -634,6 +709,11 @@
           fcIndex: 0,
           fcFlipped: false,
         };
+
+        const EXAM_PACK_LECTURE_ID = 12;
+        const EXAM_PACK_QUESTIONS = QUIZ_BANK.filter(
+          (q) => q.lectureId === EXAM_PACK_LECTURE_ID,
+        );
 
         // ========== LOCAL STORAGE ==========
         const STORAGE_KEY = "bps301_progress";
@@ -717,7 +797,13 @@
           if (target) target.classList.add("active");
 
           navItems.forEach((n) => {
-            n.classList.toggle("active", n.dataset.view === viewId);
+            const isSessionSource =
+              viewId === "quiz-session" &&
+              n.dataset.view === state.quizSourceView;
+            n.classList.toggle(
+              "active",
+              n.dataset.view === viewId || isSessionSource,
+            );
           });
 
           // Close mobile sidebar
@@ -729,6 +815,7 @@
           if (viewId === "question-bank") renderQuestionBank();
           if (viewId === "review") renderReview();
           if (viewId === "quiz") resetQuizView();
+          if (viewId === "exam-pack") resetExamPackView();
           if (viewId === "flashcards") renderFlashcardPicker();
         }
 
@@ -995,10 +1082,26 @@
 
         // ========== QUIZ MODE ==========
         function resetQuizView() {
+          state.quizSourceView = "quiz";
           document.getElementById("quizConfig").classList.remove("hidden");
           document.getElementById("quizActive").classList.add("hidden");
           document.getElementById("quizResults").classList.add("hidden");
           renderQuizLectureCheckboxes();
+        }
+
+        function resetExamPackView() {
+          state.quizSourceView = "exam-pack";
+          document.getElementById("quizActive").classList.add("hidden");
+          document.getElementById("quizResults").classList.add("hidden");
+          const meta = document.getElementById("examPackMeta");
+          meta.textContent = `${EXAM_PACK_QUESTIONS.length} unique questions available in the special exam pack. This mode uses only this pack and does not apply lecture, difficulty, or type filters.`;
+          const countInput = document.getElementById("examPackCountInput");
+          if (!countInput.value || parseInt(countInput.value) < 1) {
+            countInput.value = Math.min(
+              Math.max(EXAM_PACK_QUESTIONS.length, 1),
+              50,
+            );
+          }
         }
 
         function renderQuizLectureCheckboxes() {
@@ -1008,15 +1111,17 @@
               <input type="checkbox" data-role="select-all" checked /> Select All
             </label>
           `;
-          LECTURES.forEach((lec) => {
-            const count = QUIZ_BANK.filter(
-              (q) => q.lectureId === lec.id,
-            ).length;
-            const label = document.createElement("label");
-            label.className = "checkbox-item";
-            label.innerHTML = `<input type="checkbox" value="${lec.id}" checked> L${lec.id}: ${lec.title} <span style="margin-left:auto;font-size:10px;color:var(--text-muted);">(${count})</span>`;
-            container.appendChild(label);
-          });
+          LECTURES.filter((lec) => lec.id !== EXAM_PACK_LECTURE_ID).forEach(
+            (lec) => {
+              const count = QUIZ_BANK.filter(
+                (q) => q.lectureId === lec.id,
+              ).length;
+              const label = document.createElement("label");
+              label.className = "checkbox-item";
+              label.innerHTML = `<input type="checkbox" value="${lec.id}" checked> L${lec.id}: ${lec.title} <span style="margin-left:auto;font-size:10px;color:var(--text-muted);">(${count})</span>`;
+              container.appendChild(label);
+            },
+          );
           setupQuizCheckboxGroup("quizLectureSelect");
         }
 
@@ -1069,6 +1174,41 @@
         document
           .getElementById("startQuizBtn")
           .addEventListener("click", startQuiz);
+        document
+          .getElementById("startExamPackBtn")
+          .addEventListener("click", startExamPackQuiz);
+
+        function buildQuizSet(pool, count, allowRepeats = false) {
+          const normalizedCount = Math.max(1, Math.floor(count || 0));
+          if (pool.length === 0) return [];
+
+          if (!allowRepeats) {
+            return shuffleArray([...pool]).slice(
+              0,
+              Math.min(normalizedCount, pool.length),
+            );
+          }
+
+          const questions = [];
+          while (questions.length < normalizedCount) {
+            questions.push(...shuffleArray([...pool]));
+          }
+          return questions.slice(0, normalizedCount);
+        }
+
+        function openQuizSession(pool) {
+          state.quizQuestions = pool;
+          state.quizIndex = 0;
+          state.quizResults = Array(pool.length).fill(null);
+          state.quizAnswered = false;
+          state.quizSelectedAnswers = [];
+
+          switchView("quiz-session");
+          document.getElementById("quizActive").classList.remove("hidden");
+          document.getElementById("quizResults").classList.add("hidden");
+
+          renderQuizQuestion();
+        }
 
         function startQuiz() {
           const selectedLectures = [
@@ -1100,20 +1240,26 @@
             return;
           }
 
-          // Shuffle and pick
-          pool = shuffleArray(pool).slice(0, count);
+          openQuizSession(buildQuizSet(pool, count, false));
+        }
 
-          state.quizQuestions = pool;
-          state.quizIndex = 0;
-          state.quizResults = Array(pool.length).fill(null);
-          state.quizAnswered = false;
-          state.quizSelectedAnswers = [];
+        function startExamPackQuiz() {
+          const count = parseInt(
+            document.getElementById("examPackCountInput").value,
+            10,
+          );
 
-          document.getElementById("quizConfig").classList.add("hidden");
-          document.getElementById("quizActive").classList.remove("hidden");
-          document.getElementById("quizResults").classList.add("hidden");
+          if (!Number.isFinite(count) || count < 1) {
+            alert("Please enter a valid number of questions.");
+            return;
+          }
 
-          renderQuizQuestion();
+          if (EXAM_PACK_QUESTIONS.length === 0) {
+            alert("The special exam pack has no questions.");
+            return;
+          }
+
+          openQuizSession(buildQuizSet(EXAM_PACK_QUESTIONS, count, true));
         }
 
         function renderQuizQuestion() {
@@ -1371,7 +1517,7 @@
         // Quit quiz
         document.getElementById("quitQuizBtn").addEventListener("click", () => {
           if (confirm("Quit this quiz? Progress will be lost.")) {
-            resetQuizView();
+            switchView(state.quizSourceView);
           }
         });
 
@@ -1464,7 +1610,7 @@
 
         document
           .getElementById("retakeQuizBtn")
-          .addEventListener("click", resetQuizView);
+          .addEventListener("click", () => switchView(state.quizSourceView));
         document
           .getElementById("backToDashboardBtn")
           .addEventListener("click", () => switchView("dashboard"));

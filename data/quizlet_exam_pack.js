@@ -1,0 +1,3241 @@
+// Separate Quizlet Exam Pack generated from quizlet.txt
+(function () {
+  const study = {
+  "id": 12,
+  "title": "Quizlet Exam Pack",
+  "titleVi": "Quizlet exam pack",
+  "sections": [
+    {
+      "heading": "Exam Pack",
+      "headingVi": "Exam pack",
+      "content": "<p>This is a separate exam-style quiz pack imported from your Quizlet source file. It is kept separate from the existing lecture quizzes so you can review it independently.</p>",
+      "contentVi": "<p>Day la bo quiz dang de thi duoc import rieng tu file Quizlet ban cung cap. Bo nay duoc tach rieng khoi cac quiz theo lecture hien co de ban on tap doc lap.</p>",
+      "keyTerms": []
+    }
+  ]
+};
+
+  const quiz = [
+  {
+    "id": 3001,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which of the following modeling elements can immediately follow an event-based gateway? (Select 3 answers)",
+    "options": [
+      "A. A send task",
+      "B. A catching timer event",
+      "C. A receive task",
+      "D. An intermediate catching event",
+      "E. A start message event"
+    ],
+    "correctAnswers": [
+      1,
+      2,
+      3
+    ],
+    "explanation": "Correct answers (3): B. A catching timer event | C. A receive task | D. An intermediate catching event"
+  },
+  {
+    "id": 3002,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "A water utility company provides drinking water to residents and businesses in a city of one million inhabitants, as well wastewater treatment services to the city council. Which processes are likely to be core processes of this company? (Select 3 answers)",
+    "options": [
+      "A. Bill-to-cash",
+      "B. Procure-to-pay",
+      "C. Issue-to-resolution",
+      "D. Infrastructure inspection",
+      "E. Debt collection"
+    ],
+    "correctAnswers": [
+      0,
+      2,
+      3
+    ],
+    "explanation": "Correct answers (3): A. Bill-to-cash | C. Issue-to-resolution | D. Infrastructure inspection"
+  },
+  {
+    "id": 3003,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which of the following are examples of reference models that can be used for process identification? (Select 3 answers)",
+    "options": [
+      "A. ITIL",
+      "B. CMMI",
+      "C. SCOR",
+      "D. PCF",
+      "E. APQC"
+    ],
+    "correctAnswers": [
+      0,
+      2,
+      3
+    ],
+    "explanation": "Correct answers (3): A. ITIL | C. SCOR | D. PCF"
+  },
+  {
+    "id": 3004,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Various criteria can be used to select those processes that need to be consolidated, decommissioned, or eliminated. Which are the most common ones? (Select 3 answers)",
+    "options": [
+      "A. Strategic importance",
+      "B. Case type dimension",
+      "C. Feasibility to change",
+      "D. Dysfunctional performance",
+      "E. Completeness"
+    ],
+    "correctAnswers": [
+      0,
+      2,
+      3
+    ],
+    "explanation": "Correct answers (3): A. Strategic importance | C. Feasibility to change | D. Dysfunctional performance"
+  },
+  {
+    "id": 3005,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which of the following statement(s) is true about a case/function matrix? (Select 3 answers)",
+    "options": [
+      "A. It can be split up into multiple matrices for the purpose of improving readability",
+      "B. It has the different case types as columns and the different functions as rows",
+      "C. Each of its cells represents a process architecture",
+      "D. It can evolve into a process landscape model",
+      "E. It is only useful when analyzing core processes"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "Correct answers (3): A. It can be split up into multiple matrices for the purpose of improving readability | B. It has the different case types as columns and the different functions as rows | D. It can evolve into a process landscape model"
+  },
+  {
+    "id": 3006,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which of the following statements is true about a process map? (Select 2 answers)",
+    "options": [
+      "A. It provides insight into the various steps that are taken within a process",
+      "B. It shows which steps are alternatives of each other",
+      "C. It describes the data that is being processed in a process",
+      "D. It shows the organizational units that are involved in a process",
+      "E. It specifies which participants are involved in a process"
+    ],
+    "correctAnswers": [
+      0,
+      3
+    ],
+    "explanation": "Correct answers (2): A. It provides insight into the various steps that are taken within a process | D. It shows the organizational units that are involved in a process"
+  },
+  {
+    "id": 3007,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "If a task has two output arcs (also called flows), it is the same as if the task was followed by an:",
+    "options": [
+      "A. XOR-split",
+      "B. XOR-join",
+      "C. AND-split",
+      "D. AND-join",
+      "E. OR-split",
+      "F. OR-join"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. AND-split"
+  },
+  {
+    "id": 3008,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "If a task has two input arcs, it is the same as if the task was preceded by an:",
+    "options": [
+      "A. XOR-split",
+      "B. XOR-join",
+      "C. AND-split",
+      "D. AND-join",
+      "E. OR-split",
+      "F. OR-join"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. XOR-join"
+  },
+  {
+    "id": 3009,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which type of gateway moves each token it receives in one of its input arcs to its output arc?",
+    "options": [
+      "A. XOR-split",
+      "B. XOR-join",
+      "C. AND-split",
+      "D. AND-join",
+      "E. OR-split",
+      "F. OR-join"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. XOR-join"
+  },
+  {
+    "id": 3010,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which type of gateway proceeds when all incoming branches have completed?",
+    "options": [
+      "A. OR-join",
+      "B. OR-split",
+      "C. XOR-join",
+      "D. AND-join",
+      "E. AND-split",
+      "F. XOR-split"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. AND-join"
+  },
+  {
+    "id": 3011,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "The following BPMN diagram contains an incorrect gateway. Which one?",
+    "options": [
+      "A. The XOR gateway following task D",
+      "B. The AND gateway preceding task F",
+      "C. The XOR gateway following task F",
+      "D. The AND gateway following task A"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. The AND gateway preceding task F"
+  },
+  {
+    "id": 3012,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which of the following is NOT a task?",
+    "options": [
+      "A. Check insurance policy details",
+      "B. Insurance policy does not cover the damage",
+      "C. Calculate settlement amount",
+      "D. Determine if customer is liable for damage"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Insurance policy does not cover the damage"
+  },
+  {
+    "id": 3013,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which of the following is NOT an event?",
+    "options": [
+      "A. Purchase order received",
+      "B. Claim withdrawn by customer",
+      "C. Notify settlement decision to customer",
+      "D. Payment delay expired"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. Notify settlement decision to customer"
+  },
+  {
+    "id": 3014,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which of the following events can be used as a boundary event? (Select 3 answers)",
+    "options": [
+      "A. An intermediate message event",
+      "B. An end error event",
+      "C. An intermediate timer event",
+      "D. An intermediate error event",
+      "E. An end timer event"
+    ],
+    "correctAnswers": [
+      0,
+      2,
+      3
+    ],
+    "explanation": "Correct answers (3): A. An intermediate message event | C. An intermediate timer event | D. An intermediate error event"
+  },
+  {
+    "id": 3015,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which of the following statements refer to a critical (core) process of a company?",
+    "options": [
+      "A. Human resource management",
+      "B. Accounts payable",
+      "C. Order-to-cash",
+      "D. Customer relationship management"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. Order-to-cash"
+  },
+  {
+    "id": 3016,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "The measurement-to-cash process of an electricity company is the process that starts when the electricity meter of a customer is read at the end of a month and ends (successfully) when the customer pays the electricity bill for that month. In this process, which of the following performance measures are directly related to costs? (Select 3 answers)",
+    "options": [
+      "A. Average electricity consumption per customer",
+      "B. Cycle time",
+      "C. Percentage of under-billing errors",
+      "D. Percentage of over-billing errors",
+      "E. Price per kilowatt-hour (KWh)"
+    ],
+    "correctAnswers": [
+      1,
+      2,
+      3
+    ],
+    "explanation": "Correct answers (3): B. Cycle time | C. Percentage of under-billing errors | D. Percentage of over-billing errors"
+  },
+  {
+    "id": 3017,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Consider the following model. Which of the following statements are true?( PICTURE ) (Select 4 answers)",
+    "options": [
+      "A. An order may be cancelled either if a cancellation request is made by the customer, or if materials are unavailable",
+      "B. The interruption of the raw materials acquisition sub-process may be triggered from within the sub-process, or from outside the sub-process",
+      "C. An order may not be canceled even if a customer sends a \"Continue cancellation request\"",
+      "D. If a cancellation request is received after raw materials have been acquired, the request is not considered",
+      "E. Task \"Purchase raw materials from Supplier\" is always executed"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "Correct answers (4): A. An order may be cancelled either if a cancellation request is made by the customer, or if materials are unavailable | B. The interruption of the raw materials acquisition sub-process may be triggered from within the sub-process, or from outside the sub-process | C. An order may not be canceled even if a customer sends a \"Continue cancellation request\" | D. If a cancellation request is received after raw materials have been acquired, the request is not considered"
+  },
+  {
+    "id": 3018,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "In a process-oriented organization, who is directly accountable for poor performance of a process?",
+    "options": [
+      "A. The process participants",
+      "B. The executive management team",
+      "C. The process owner",
+      "D. The process analyst",
+      "E. The BPM group"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. The process owner"
+  },
+  {
+    "id": 3019,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "According to Porter's classification of processes, which of the following is/are support processes? (Select 2 answers)",
+    "options": [
+      "A. The process for handling requests from employees to take their annual vacation",
+      "B. The process for reimbursing travel expenditures to employees when returning from a business travel",
+      "C. The process for handling customer complaints (complaint-to-resolution)",
+      "D. The process for producing the annual report of the company",
+      "E. The process for recovering overdue payments from customers"
+    ],
+    "correctAnswers": [
+      0,
+      1
+    ],
+    "explanation": "Correct answers (2): A. The process for handling requests from employees to take their annual vacation | B. The process for reimbursing travel expenditures to employees when returning from a business travel"
+  },
+  {
+    "id": 3020,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Suppose that process A is a downstream process of process B. This is an example of what kind of relation?",
+    "options": [
+      "A. An abstraction relation",
+      "B. A sequential relation",
+      "C. A hierarchical relation",
+      "D. An external relation"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. A sequential relation"
+  },
+  {
+    "id": 3021,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Bạn chưa học các thuật ngữ này! (Select 2 answers)",
+    "options": [
+      "A. The XOR gateway after task \"Store and print notice\"",
+      "B. The XOR gateway preceding task \"Hand out cards\"",
+      "C. The AND gateway preceding event \"Wednesday morning 2\"",
+      "D. The AND gateway before task \"Plan meeting second intaker\"",
+      "E. The AND split after task \"Hand out cards\""
+    ],
+    "correctAnswers": [
+      1,
+      3
+    ],
+    "explanation": "Correct answers (2): B. The XOR gateway preceding task \"Hand out cards\" | D. The AND gateway before task \"Plan meeting second intaker\""
+  },
+  {
+    "id": 3022,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "The following BPMN diagram contains an incorrect gateway. Which one?( PICTURE )",
+    "options": [
+      "A. The AND-join preceding task F",
+      "B. The XOR-split following task F",
+      "C. The XOR-join following task D",
+      "D. The AND-split following task A"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. The AND-join preceding task F"
+  },
+  {
+    "id": 3023,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "An IT hardware store provides a Web front-end allowing its customers to purchase IT equipment online (e.g. tablets, laptops, accessories, printers). In the context of the order-to - cash process of this company, which of the following is likely to be modeled as a data store? (Select 2 answers)",
+    "options": [
+      "A. The Customer Relationship Management (CRM) system",
+      "B. The shopping cart of a customer purchasing via the Web front-end",
+      "C. The history of a customer's past purchases",
+      "D. An invoice",
+      "E. The store's product catalog"
+    ],
+    "correctAnswers": [
+      0,
+      4
+    ],
+    "explanation": "Correct answers (2): A. The Customer Relationship Management (CRM) system | E. The store's product catalog"
+  },
+  {
+    "id": 3024,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Let us consider the order-to-cash process of a company called CoolIT that sells air conditioning systems. Which of the following is likely to be modeled as a pool? (Select 2 answers)",
+    "options": [
+      "A. The customer",
+      "B. A subcontractor of CoolIT",
+      "C. A salesperson at CoolIT",
+      "D. A clerk at the accounts payable department of CoolIT",
+      "E. The accounts receivable department of CoolIT"
+    ],
+    "correctAnswers": [
+      0,
+      1
+    ],
+    "explanation": "Correct answers (2): A. The customer | B. A subcontractor of CoolIT"
+  },
+  {
+    "id": 3025,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "receive task",
+    "options": [
+      "A. This collaboration may deadlock if the seller is already registered",
+      "B. An internal decision in one party must be matched by an XOR-join in the other party"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: "
+  },
+  {
+    "id": 3026,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which of the following modeling elements can immediately follow an event-based gateway? (Select 2 answers)",
+    "options": [
+      "A. Any intermediate catching event",
+      "B. Any start message event",
+      "C. Any timer event",
+      "D. Any receive task",
+      "E. Any send task"
+    ],
+    "correctAnswers": [
+      0,
+      3
+    ],
+    "explanation": "Correct answers (2): A. Any intermediate catching event | D. Any receive task"
+  },
+  {
+    "id": 3027,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which of the following events can be used as a boundary event? (Select 3 answers)",
+    "options": [
+      "A. An end error event",
+      "B. An intermediate timer event",
+      "C. An end timer event",
+      "D. An intermediate error event",
+      "E. An intermediate message event"
+    ],
+    "correctAnswers": [
+      1,
+      3,
+      4
+    ],
+    "explanation": "Correct answers (3): B. An intermediate timer event | D. An intermediate error event | E. An intermediate message event"
+  },
+  {
+    "id": 3028,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which complementary roles are typically involved in process discovery? (Select 2 answers)",
+    "options": [
+      "A. Chief Executive Officer",
+      "B. Process Analyst",
+      "C. Head of Enterprise Architecture",
+      "D. Domain Expert",
+      "E. Chief Information Officer"
+    ],
+    "correctAnswers": [
+      1,
+      3
+    ],
+    "explanation": "Correct answers (2): B. Process Analyst | D. Domain Expert"
+  },
+  {
+    "id": 3029,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which aspects should a process analyst pay specific attention to? (Select 3 answers)",
+    "options": [
+      "A. Securing support of key persons",
+      "B. Exploring various aspects of the process",
+      "C. Extracting information to be shown in the model",
+      "D. Making models look nice"
+    ],
+    "correctAnswers": [
+      0,
+      2,
+      3
+    ],
+    "explanation": "Correct answers (3): A. Securing support of key persons | C. Extracting information to be shown in the model | D. Making models look nice"
+  },
+  {
+    "id": 3030,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which input is not appropriate for evidence-based discovery?",
+    "options": [
+      "A. Observing how a process works",
+      "B. Studying reference models",
+      "C. Reading documentation of a process",
+      "D. Inspecting log data of the process"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Studying reference models"
+  },
+  {
+    "id": 3031,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which discovery method provides the best objectivity?",
+    "options": [
+      "A. Interviewing process participants",
+      "B. Observing participants working in the process",
+      "C. Reading documentation material",
+      "D. Analyzing log data"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. Analyzing log data"
+  },
+  {
+    "id": 3032,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "What needs to be considered when modeling a process? (Select 2 answers)",
+    "options": [
+      "A. The boundaries of the process",
+      "B. The sentiment of the domain expert",
+      "C. The handovers between resources",
+      "D. The skills of the process participants"
+    ],
+    "correctAnswers": [
+      0,
+      2
+    ],
+    "explanation": "Correct answers (2): A. The boundaries of the process | C. The handovers between resources"
+  },
+  {
+    "id": 3033,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Process modeling guidelines aim to contribute to which goals? (Select 3 answers)",
+    "options": [
+      "A. Making the models uniform",
+      "B. Making it easier to compare models",
+      "C. Helping a reader to understand the model quickly",
+      "D. Making process modeling more sophisticated"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Correct answers (3): A. Making the models uniform | B. Making it easier to compare models | C. Helping a reader to understand the model quickly"
+  },
+  {
+    "id": 3034,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Mistake (Select 4 answers)",
+    "options": [
+      "A. Enter complaint details in the issue tracking system",
+      "B. Send e-mail to customer to acknowledge receipt of complaint",
+      "C. Investigate complain and devise possible resolution",
+      "D. Obtain approval from manager for proposed resolution",
+      "E. Discuss proposed resolution with customer",
+      "F. Apply approved resolution"
+    ],
+    "correctAnswers": [
+      1,
+      2,
+      4,
+      5
+    ],
+    "explanation": "Correct answers (4): B. Send e-mail to customer to acknowledge receipt of complaint | C. Investigate complain and devise possible resolution | E. Discuss proposed resolution with customer | F. Apply approved resolution"
+  },
+  {
+    "id": 3035,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which of the following techniques are useful when prioritizing issues in a process? (Select 2 answers)",
+    "options": [
+      "A. Cause-effect diagrams",
+      "B. Why-why diagrams",
+      "C. Value-added analysis",
+      "D. Pareto charts",
+      "E. Issue register"
+    ],
+    "correctAnswers": [
+      3,
+      4
+    ],
+    "explanation": "Correct answers (2): D. Pareto charts | E. Issue register"
+  },
+  {
+    "id": 3036,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "We consider the following process for handling claims for disability insurance at a insurance company called InsureIT. When a claim is received, a junior claims officer first enters the claim details into the insurance information system and performs a basic checks. Next, the claim is moved to a senior claims officer who performs an in-depth assessment of the reported disability and estimates the monthly benefit entitlement (i.e. how much monthly compensation is the claimant entitled to, and for what period of time). In the case of short-term disability benefits, the senior claims handler can perform the benefit assessment without requiring further documentation and notifies the customer of the outcome via e mail or postal mail. In the case of long-term disability claims (more than three months), the senior claims handler requires a full medical report in order to assess the benefit entitlements. The process for ob",
+    "options": [
+      "A. Normal",
+      "B. Exponential",
+      "C. Fixed-value",
+      "D. Uniform"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Exponential"
+  },
+  {
+    "id": 3037,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "An insurance company receives 2000 disability claims per year, out of which 20% are for short-term disability and 80% for long-term disability. The average time between a claim being lodged and a decision being made is 3 working days in the case of short-term disability claims, and 20 working days for long-term disability claims. Question: What is the (average) cycle time of the above process (including waiting time)?",
+    "options": [
+      "A. 3 days",
+      "B. 16.6 days (0.23 + 0.820)",
+      "C. 20 days",
+      "D. 24.4 days"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. 16.6 days (0.23 + 0.820)"
+  },
+  {
+    "id": 3038,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "We consider the following process for handling claims for disability insurance at an insurance company called InsureIT. When a claim is received, a junior claims officer first enters the claim details into the insurance information system and performs a basic check. Data entry and the basic check usually take 10 minutes in total. It is rare for the claim to be rejected at this stage (it only happens in 2% of cases) and for the purpose of the questions below we can assume that claims are never rejected at this stage. Next, the claim is moved to a senior claims officer who performs an in-depth assessment of the reported disability and estimates the monthly benefit entitlement (i.e. how much monthly compensation is the claimant entitled to, and for what period of time). In the case of short-term disability benefits, the senior claims handler can perform the benefit assessment without requiring further documentation. In",
+    "options": [
+      "A. For short-term disability insurance, it takes 3 working days disability claims to complete the process",
+      "B. 20% of claims are for short-term disability",
+      "C. 80% of claims for long-term disability",
+      "D. There are 2000 disability claims per year"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. There are 2000 disability claims per year"
+  },
+  {
+    "id": 3039,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which of the following statements defines a quality metric in the context of the claims handling process above? (Select 2 answers)",
+    "options": [
+      "A. Number of monthly claims received",
+      "B. Percentage of the working time of senior claims handlers spent in claims assessment",
+      "C. Percentage of claims that give rise to entitlements",
+      "D. Percentage of claim decisions that are contested by customers",
+      "E. Percentage of short-term disability claims that take more than 5 work days to be assessed"
+    ],
+    "correctAnswers": [
+      3,
+      4
+    ],
+    "explanation": "Correct answers (2): D. Percentage of claim decisions that are contested by customers | E. Percentage of short-term disability claims that take more than 5 work days to be assessed"
+  },
+  {
+    "id": 3040,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which of the following is NOT a dimension of the Devil's Quadrangle?",
+    "options": [
+      "A. Time",
+      "B. Performance",
+      "C. Cost",
+      "D. Quality",
+      "E. Flexibility"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Performance"
+  },
+  {
+    "id": 3041,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "The case-based work heuristic is the following: \"Consider removing batch processing and periodic activities from a business process\". To what class of redesign heuristics does this heuristic belong?",
+    "options": [
+      "A. Organization Heuristics",
+      "B. Information Heuristics",
+      "C. Customer Heuristics",
+      "D. Business Process Behavior Heuristics",
+      "E. Business Process Operation Heuristics"
+    ],
+    "correctAnswers": [
+      4
+    ],
+    "explanation": "Correct answer: E. Business Process Operation Heuristics"
+  },
+  {
+    "id": 3042,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "What is the name of the redesign heuristic that suggests checking the completeness and correctness of incoming materials?",
+    "options": [
+      "A. Empower",
+      "B. Control addition",
+      "C. Buffering",
+      "D. Centralization",
+      "E. Exception"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Control addition"
+  },
+  {
+    "id": 3043,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which of the following is/are part of a product data model? (Select 3 answers)",
+    "options": [
+      "A. Information elements",
+      "B. Leaf elements",
+      "C. A business process",
+      "D. Production rules",
+      "E. Performance characteristics"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "Correct answers (3): A. Information elements | B. Leaf elements | D. Production rules"
+  },
+  {
+    "id": 3044,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which of the following are explicit benefits that the use a BPMS brings to an organization. (Select 3 answers)",
+    "options": [
+      "A. It allows to reduce errors during handovers of work in a process",
+      "B. It helps to enforce key business rules",
+      "C. It provides transparency during the execution of processes",
+      "D. It allows to efficiently store business-critical data",
+      "E. It automates a large number of tasks, replacing human workers"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Correct answers (3): A. It allows to reduce errors during handovers of work in a process | B. It helps to enforce key business rules | C. It provides transparency during the execution of processes"
+  },
+  {
+    "id": 3045,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which of the following is NOT a typical component of a Business Process Management System?",
+    "options": [
+      "A. A process modeling tool",
+      "B. An execution engine",
+      "C. An Enterprise Resource Planning (ERP) system",
+      "D. A worklist handler"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. An Enterprise Resource Planning (ERP) system"
+  },
+  {
+    "id": 3046,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "Which of the following tasks is NOT needed when automating a conceptual process model?",
+    "options": [
+      "A. Specify properties for messages, errors, and signals",
+      "B. Convert send and receive tasks into service tasks",
+      "C. Remove physical data objects and data stores",
+      "D. Merge consecutive activities if allocated to the same resource"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Convert send and receive tasks into service tasks"
+  },
+  {
+    "id": 3047,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "How can a manual task be linked to a BPMS? (Select 3 answers)",
+    "options": [
+      "A. By implementing it via a service task",
+      "B. By implementing it via a sub-process",
+      "C. A manual task can never be linked to a BPMS",
+      "D. By implementing it via a user task",
+      "E. By implementing it as a receive task"
+    ],
+    "correctAnswers": [
+      0,
+      3,
+      4
+    ],
+    "explanation": "Correct answers (3): A. By implementing it via a service task | D. By implementing it via a user task | E. By implementing it as a receive task"
+  },
+  {
+    "id": 3048,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "Which of the following elements of a conceptual process model can be directly interpreted by a BPMS?",
+    "options": [
+      "A. Electronic data stores",
+      "B. Pools and lanes",
+      "C. Physical data objects and data stores",
+      "D. Manual tasks",
+      "E. Send tasks"
+    ],
+    "correctAnswers": [
+      4
+    ],
+    "explanation": "Correct answer: E. Send tasks"
+  },
+  {
+    "id": 3049,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which of the following is an execution property? (Select 4 answers)",
+    "options": [
+      "A. Loop conditions",
+      "B. Process variables",
+      "C. Task data inputs",
+      "D. Data associations",
+      "E. Lane names"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "Correct answers (4): A. Loop conditions | B. Process variables | C. Task data inputs | D. Data associations"
+  },
+  {
+    "id": 3050,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which attributes are minimally required to be recorded in each event of an event log, in order to make the log suitable for applying log-based process analysis techniques? (Select 3 answers)",
+    "options": [
+      "A. A reference to a task",
+      "B. A reference to data elements produced by a task",
+      "C. A reference to a specific case",
+      "D. A reference to a point in time"
+    ],
+    "correctAnswers": [
+      0,
+      2,
+      3
+    ],
+    "explanation": "Correct answers (3): A. A reference to a task | C. A reference to a specific case | D. A reference to a point in time"
+  },
+  {
+    "id": 3051,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which concepts belong to the view of a process participant on an executing process? (Select 2 answers)",
+    "options": [
+      "A. work item",
+      "B. work around",
+      "C. worklist",
+      "D. homework"
+    ],
+    "correctAnswers": [
+      0,
+      2
+    ],
+    "explanation": "Correct answers (2): A. work item | C. worklist"
+  },
+  {
+    "id": 3052,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "What does the challenge of correlation refer to in the context of event log extraction?",
+    "options": [
+      "A. It refers to the problem of finding connections between rankings of data elements.",
+      "B. It relates to the problem of ordering the events on the time axis.",
+      "C. It refers to the problem of identifying the case an event belongs to.",
+      "D. It refers to the problem of grouping events with high and low values."
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. It refers to the problem of identifying the case an event belongs to."
+  },
+  {
+    "id": 3053,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which of the following criteria are important for robust process discovery? (Select 4 answers)",
+    "options": [
+      "A. Fitness",
+      "B. Simplicity",
+      "C. Precision",
+      "D. Generalization"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "Correct answers (4): A. Fitness | B. Simplicity | C. Precision | D. Generalization"
+  },
+  {
+    "id": 3054,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "What does separation of duties mean?",
+    "options": [
+      "A. Two processes are not allowed to interact.",
+      "B. Two tasks are not allowed to be executed by the same participant.",
+      "C. Two participants are not allowed to view the same data.",
+      "D. Two data objects are not allowed to be used in the same process."
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Two tasks are not allowed to be executed by the same participant."
+  },
+  {
+    "id": 3055,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which of the following statements is true about a process landscape model? (Select 3 answers)",
+    "options": [
+      "A. It has to be understandable by all major stakeholders",
+      "B. It is the model of the process architecture that covers the processes on Level 1",
+      "C. It specifies which participants are involved in a process",
+      "D. It shows the core processes on a very abstract level",
+      "E. It shows which steps are alternatives of each other"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "Correct answers (3): A. It has to be understandable by all major stakeholders | B. It is the model of the process architecture that covers the processes on Level 1 | D. It shows the core processes on a very abstract level"
+  },
+  {
+    "id": 3056,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which of the following stages of the BPM lifecycle is defined as the act of gathering information about an existing process and organizing it in terms of an as-is process model? (Select 2 answers)",
+    "options": [
+      "A. Process Implementation",
+      "B. Process Redesign",
+      "C. Process Identification",
+      "D. Process Analysis",
+      "E. Process Discovery"
+    ],
+    "correctAnswers": [
+      2,
+      4
+    ],
+    "explanation": "Correct answers (2): C. Process Identification | E. Process Discovery"
+  },
+  {
+    "id": 3057,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which of the following is NOT an activity?A. Determine if customer is liable for damage",
+    "options": [
+      "A. Check insurance policy details",
+      "B. Calculate settlement amount",
+      "C. Insurance policy does not cover the damage"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: "
+  },
+  {
+    "id": 3058,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which of the following is NOT an event?",
+    "options": [
+      "A. Payment delay expired",
+      "B. Notify settlement decision to customer",
+      "C. Purchase order received",
+      "D. Claim withdrawn by customer"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Notify settlement decision to customer"
+  },
+  {
+    "id": 3059,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "What makes a good process analyst? (Select 4 answers)",
+    "options": [
+      "A. Having a set of working hypotheses of how the process is structured at different levels of detail",
+      "B. Paying attention to model quality",
+      "C. Getting the right people on board",
+      "D. Identifying patterns in the information provided by domain experts"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "Correct answers (4): A. Having a set of working hypotheses of how the process is structured at different levels of detail | B. Paying attention to model quality | C. Getting the right people on board | D. Identifying patterns in the information provided by domain experts"
+  },
+  {
+    "id": 3060,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "In an order-to-cash process, which of the following situations represent a waste of type Defect? (Select 3 answers)",
+    "options": [
+      "A. The customer sends back some of the products they received because they did not match what had been agreed upon in the P",
+      "B. The supplier is obliged to pay for transportation of the products back to their warehouse and has to re-send the correct products",
+      "C. Three days after sending the Purchase Order (PO), the customer asks that the PO be cancelled after discovering that the ordered products are no longer needed. The cancellation request is accepted since the ordered products have not been dispatched yet",
+      "D. The PO is received on a Monday. On that day the workload is very high and it is not possible to confirm if the products can be delivered on the date requested by the customer. The PO is put on hold until Wednesday and only then a response is sent to the customer.",
+      "E. An invoice is received but the amounts shown in the"
+    ],
+    "correctAnswers": [
+      0,
+      3,
+      4
+    ],
+    "explanation": "Correct answers (3): A. The customer sends back some of the products they received because they did not match what had been agreed upon in the P | D. The PO is received on a Monday. On that day the workload is very high and it is not possible to confirm if the products can be delivered on the date requested by the customer. The PO is put on hold until Wednesday and only then a response is sent to the customer. | E. An invoice is received but the amounts shown in the"
+  },
+  {
+    "id": 3061,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "The following BPMN model captures a fragment of a process for rental of construction equipment at a construction company. Each task is annotated with the corresponding processing time. The process model is also annotated with branching probabilities (not all branching probabilities are shown, but the missing ones can be inferred). On average, there are 40 equipment rental requests per week.( PICTURE )Which of the following arithmetic expressions allows us to calculate the Theoretical Cycle Time (TCT) of this process?",
+    "options": [
+      "A. 6 + (5 + 8)/0.8 + 4 + 0.9*5",
+      "B. 40(6 + (5 + 8)/0.2 + 4 + 0.95)",
+      "C. 6 + (5 + 8)/0.2 + 4 + 0.9*5",
+      "D. 6 + 5 + 8 + 4 + 0.9*5",
+      "E. 40(6 + (5 + 8)/0.8 + 4 + 0.95"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. 6 + (5 + 8)/0.8 + 4 + 0.9*5"
+  },
+  {
+    "id": 3062,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "Consider the following insurance claims handling process. The processing time of each task is shown as a text association in the BPMN diagram. The call center receives 800 calls per week.( PICTURE )Which of the following expressions allows us to calculate the theoretical cycle time of the process?",
+    "options": [
+      "A. 2(60 + 0.9540) + 120 + 0.85(1200 + 0.8(120 + 60))",
+      "B. 60 + 0.9(540 + 120 + 0.85(1200 + 0.8*(240 + 60)))",
+      "C. 800(60 + 0.9(540 + 120 + 0.85(1200 + 0.8(240 + 60)))",
+      "D. 800(60 + 0.1(540 + 120 + 0.15(1200 + 0.2(240 + 120 + 60)))",
+      "E. 60 + 540 + 120 + 1200 + 240 + 60"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. 60 + 0.9(540 + 120 + 0.85(1200 + 0.8*(240 + 60)))"
+  },
+  {
+    "id": 3063,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "In the context of the insurance claim handler process, if you had to simulate this model without further information, to which of the following tasks would you assign an exponential distribution for the processing time",
+    "options": [
+      "A. Register claim",
+      "B. Initiate payment",
+      "C. Assess claim",
+      "D. Close claim"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. Assess claim"
+  },
+  {
+    "id": 3064,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "A fast-food restaurant receives on average 1200 customers per day (between 10:00 and 22:00). During peak times (12:00-15:00 and 18:00-21:00), the restaurant receives around 900 customers in total, and 90 customers can be found in the restaurant (on average) at a given point in time. At non-peak times, the restaurant receives 300 customers in total, and 30 customers can be found in the restaurant (on average) at a given point in time.What is the average time that a customer spends in the restaurant during peak times? And during non-peak times?",
+    "options": [
+      "A. 36 min during peak times and 36 min during non-peak times",
+      "B. 30 min during peak times and 10 min during non-peak times",
+      "C. 60 min during peak times and 36 min during non-peak times"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. 36 min during peak times and 36 min during non-peak times"
+  },
+  {
+    "id": 3065,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which of the following is NOT true about transactional methods for process redesign?",
+    "options": [
+      "A. Use the existing process as a starting point",
+      "B. Seek to identify problems and resolve them incrementally, one step at a time",
+      "C. Do not put into question the current process structure",
+      "D. Follow a clean slate approach"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. Follow a clean slate approach"
+  },
+  {
+    "id": 3066,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which of the following redesign heuristics suggests changing the order of tasks in a way that may reduce waste of type Over-processing?",
+    "options": [
+      "A. Re-sequencing",
+      "B. Triage",
+      "C. Enhance parallelism",
+      "D. Task composition/decomposition",
+      "E. Task elimination"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. Re-sequencing"
+  },
+  {
+    "id": 3067,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which of the following redesign heuristics suggests eliminating non-value adding steps to increase the speed of processing and therefore reduce the cost?",
+    "options": [
+      "A. Enhance parallelism",
+      "B. Task elimination",
+      "C. Re-sequencing",
+      "D. Task composition/decomposition",
+      "E. Triage"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Task elimination"
+  },
+  {
+    "id": 3068,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "In a context of a procure-to-pay process, what is the redesign heuristics that suggests to separate the process for Direct procurement (e.g. raw materials needed for production) and Indirect procurement (e.g. everyday's purchases not needed for production)?",
+    "options": [
+      "A. Process specialization",
+      "B. Automation",
+      "C. Parallelism enhancement",
+      "D. Communication optimization"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. Process specialization"
+  },
+  {
+    "id": 3069,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "Which of the following tasks is NOT needed when automating a conceptual process model?",
+    "options": [
+      "A. Add exception handlers",
+      "B. Add physical data objects",
+      "C. Merge consecutive activities if allocated to the same resource",
+      "D. Specify properties for messages, errors and signals"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Add physical data objects"
+  },
+  {
+    "id": 3070,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which of the following are examples of domain-specific Process-Aware Information Systems (PAIS)? (Select 4 answers)",
+    "options": [
+      "A. Product Lifecycle Management (PLM) system",
+      "B. Enterprise Resource Planning (ERP) systems",
+      "C. Supply Chain Management (SCM) systems",
+      "D. Business Process Management Systems (BPMS)",
+      "E. Customer Relationship Management (CRM) systems"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "explanation": "Correct answers (4): A. Product Lifecycle Management (PLM) system | B. Enterprise Resource Planning (ERP) systems | C. Supply Chain Management (SCM) systems | E. Customer Relationship Management (CRM) systems"
+  },
+  {
+    "id": 3071,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "The BPM lifecycle encompasses a range of methods and tools to identify processes and to manage individual processes. Which other factors influence the success of BPM in an organization? (Select 4 answers)",
+    "options": [
+      "A. Governance",
+      "B. Strategic Alignment",
+      "C. Culture",
+      "D. Maturity",
+      "E. People"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "explanation": "Correct answers (4): A. Governance | B. Strategic Alignment | C. Culture | E. People"
+  },
+  {
+    "id": 3072,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "What are the biggest problems that enterprises are facing?",
+    "options": [
+      "A. Complexity and budget",
+      "B. Complexity and security",
+      "C. Complexity and change",
+      "D. Agility and remote work"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. Complexity and change"
+  },
+  {
+    "id": 3073,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which is not an EA characteristic",
+    "options": [
+      "A. EA captures the essentials of the business, IT and its evolution.",
+      "B. EA manages the complexity of the enterprise and its processes and systems.",
+      "C. A good EA will provide maximal flexibility and adaptation.",
+      "D. Each unit in an organization should develop its own EA.",
+      "E. A good EA should easily be extended and evolved."
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. Each unit in an organization should develop its own EA."
+  },
+  {
+    "id": 3074,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "When does the OR-join Gateway proceed? (Select 2 answers)",
+    "options": [
+      "A. When all active incoming branches have completed.",
+      "B. When a token arrives in one of the incoming branches.",
+      "C. When it receives tokens in both incoming branches.",
+      "D. When one of the active branches have completed."
+    ],
+    "correctAnswers": [
+      0,
+      3
+    ],
+    "explanation": "Correct answers (2): A. When all active incoming branches have completed. | D. When one of the active branches have completed."
+  },
+  {
+    "id": 3075,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "What do you first create when using Sparx EA?",
+    "options": [
+      "A. A diagram",
+      "B. An element",
+      "C. A package",
+      "D. A model"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. A model"
+  },
+  {
+    "id": 3076,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "What are the types of gateway and event?",
+    "options": [
+      "A. Event-driven XOR and timer·",
+      "B. OR and message",
+      "C. Data-driven XOR and message·",
+      "D. Event-driven XOR and message"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. Event-driven XOR and message"
+  },
+  {
+    "id": 3077,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "A __ is defined as any collection of organizations that has a common set of goals",
+    "options": [
+      "A. Architecture",
+      "B. Framework",
+      "C. Enterprise",
+      "D. None of the above"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. Enterprise"
+  },
+  {
+    "id": 3078,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "EA offers a holistic perspective of the __, and on the actions that should be taken to achieve the company's goals",
+    "options": [
+      "A. Current operation",
+      "B. Current and future operation",
+      "C. Future operation",
+      "D. IT operation"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Current and future operation"
+  },
+  {
+    "id": 3079,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which one is not current about the event-driven XOR?",
+    "options": [
+      "A. Proceeds after an invoice is issued and submitted",
+      "B. Proceeds after the payment is received",
+      "C. May proceed after 14 days",
+      "D. Will not proceed to debt collection if the payment is received in 14 days"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. Will not proceed to debt collection if the payment is received in 14 days"
+  },
+  {
+    "id": 3080,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "A part of the BuildCo company business process is shown below. When does the event-driven XOR proceed?",
+    "options": [
+      "A. Only when Delivery schedule received",
+      "B. Only when RO rejection received",
+      "C. When both A and B events happens",
+      "D. By one of the events mentioned in A and B"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. By one of the events mentioned in A and B"
+  },
+  {
+    "id": 3081,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which is the type of BPMN element represented in the blue color?",
+    "options": [
+      "A. Data object",
+      "B. Data store",
+      "C. Data output",
+      "D. None of the above"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Data store"
+  },
+  {
+    "id": 3082,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which of the following is true of aggregation and composition relationships?",
+    "options": [
+      "A. If a composite is deleted, its parts are deleted as well.",
+      "B. If an aggregate is deleted, its parts are deleted as well.",
+      "C. Aggregation imply an existence dependency between the aggregating and aggregated concepts.",
+      "D. Composition does not imply an existence dependency between the composite and composed concepts."
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. If a composite is deleted, its parts are deleted as well."
+  },
+  {
+    "id": 3083,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "Which one shows the relationships in the diagram?",
+    "options": [
+      "A. realization, serving, aggregation",
+      "B. assignment, composition, realization",
+      "C. access, realization, assignment",
+      "D. flow, assignment, composition"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. assignment, composition, realization"
+  },
+  {
+    "id": 3084,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which is correct about Archimate?",
+    "options": [
+      "A. Archimate models only EA domains",
+      "B. Archimate models all EA domains and relations between them.",
+      "C. Archimate defines a process for EA",
+      "D. Archimate is both a process and a language for EA"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Archimate models all EA domains and relations between them."
+  },
+  {
+    "id": 3085,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which is not correct about Archimate?",
+    "options": [
+      "A. 'Business Process' is a business layer active structure concept",
+      "B. 'Business Process' is a business layer behavior concept",
+      "C. A collaboration represents an aggregate of two or more internal active structure elements",
+      "D. An interaction represents a unit of collective behavior that must be performed by two or more internal active structure elements"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. 'Business Process' is a business layer active structure concept"
+  },
+  {
+    "id": 3086,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "An outcome is __________",
+    "options": [
+      "A. A high-level statement of intent, direction or desired end state for an organization and its stakeholders.",
+      "B. A factor that prevents or obstructs the realization of goals.",
+      "C. A statement of need that must be met by the architecture.",
+      "D. An end result that has been achieved."
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. An end result that has been achieved."
+  },
+  {
+    "id": 3087,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which one can realize a resource?",
+    "options": [
+      "A. IoT device (technology layer)",
+      "B. Data warehousing solution (application layer)",
+      "C. Business Intelligence team (business layer)",
+      "D. All of the above"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. All of the above"
+  },
+  {
+    "id": 3088,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "Which of the following about the diagram is true?",
+    "options": [
+      "A. Specialist is a passive structure element",
+      "B. High-Risk Claims adjudication is a business layer behavior concept.",
+      "C. Specialist is a type of Travel Insurance Claim Analyst.",
+      "D. ArchiSurance Contact Center is composed of three different types of interfaces."
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. ArchiSurance Contact Center is composed of three different types of interfaces."
+  },
+  {
+    "id": 3089,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "What is the relationship between Flower Seller and Sales? (Select 2 answers)",
+    "options": [
+      "A. Composition",
+      "B. Aggregation",
+      "C. Assignment",
+      "D. Serving"
+    ],
+    "correctAnswers": [
+      1,
+      2
+    ],
+    "explanation": "Correct answers (2): B. Aggregation | C. Assignment"
+  },
+  {
+    "id": 3090,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "A business role is the responsibility for performing specific behavior, to which ______ can be assigned.",
+    "options": [
+      "A. An application role",
+      "B. B.A service",
+      "C. A model",
+      "D. An actor"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. An actor"
+  },
+  {
+    "id": 3091,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Generally, Behavior elements __ Passive Structure elements",
+    "options": [
+      "A. Realize",
+      "B. Access",
+      "C. Trigger",
+      "D. Serve"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Access"
+  },
+  {
+    "id": 3092,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "What are the most common cross layer relationships in Archimate?",
+    "options": [
+      "A. realization-serving",
+      "B. assignment-serving",
+      "C. assignment-realization",
+      "D. access-realization"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. realization-serving"
+  },
+  {
+    "id": 3093,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "What is the type of the following viewpoint? (Select 2 answers)",
+    "options": [
+      "A. Application cooperation viewpoint",
+      "B. Application usage viewpoint",
+      "C. Business process viewpoint",
+      "D. Business Cooperation viewpoint"
+    ],
+    "correctAnswers": [
+      0,
+      1
+    ],
+    "explanation": "Correct answers (2): A. Application cooperation viewpoint | B. Application usage viewpoint"
+  },
+  {
+    "id": 3094,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "A business process involves events and activities. ___ refers to those management activities that systematically define a set of business processes of an organization and establish clear criteria for selecting specific processes for improvement.",
+    "options": [
+      "A. Process activities",
+      "B. Process architecture",
+      "C. Process modeling",
+      "D. Process identification"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. Process identification"
+  },
+  {
+    "id": 3095,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which of the following statements refer to a critical (core) process of a company?",
+    "options": [
+      "A. Human resource management",
+      "B. Accounts payable",
+      "C. Order-to-cash"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. Order-to-cash"
+  },
+  {
+    "id": 3096,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "The measurement-to-cash process of an electricity company is the process that starts when the electricity meter of a customer is read at the end of a month and ends (successfully) when the customer pays the electricity bill for that month. In this process, which of the following performance measures are directly related to costs? (Select 3 answers)",
+    "options": [
+      "A. Average electricity consumption per customer",
+      "B. Cycle time",
+      "C. Percentage of under-billing errors",
+      "D. Percentage of over-billing errors",
+      "E. KWh"
+    ],
+    "correctAnswers": [
+      1,
+      2,
+      3
+    ],
+    "explanation": "Correct answers (3): B. Cycle time | C. Percentage of under-billing errors | D. Percentage of over-billing errors"
+  },
+  {
+    "id": 3097,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which of the following statement(s) do NOT hold?",
+    "options": [
+      "A. The target of a message flow may be a task",
+      "B. The source of a message flow may be a task",
+      "C. A message flow can connect a task in a pool to the boundary of another pool",
+      "D. A message flow can connect a task in a pool to another task in the same pool",
+      "E. A message flow may lead to the creation of a data object by the task that receives the message"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. A message flow can connect a task in a pool to another task in the same pool"
+  },
+  {
+    "id": 3098,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which of the following events can be used as a boundary event? (Select 3 answers)",
+    "options": [
+      "A. An intermediate timer event",
+      "B. An end error event",
+      "C. An end timer event",
+      "D. An intermediate error event",
+      "E. An intermediate message event"
+    ],
+    "correctAnswers": [
+      0,
+      3,
+      4
+    ],
+    "explanation": "Correct answers (3): A. An intermediate timer event | D. An intermediate error event | E. An intermediate message event"
+  },
+  {
+    "id": 3099,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which of the following statements are true about a choreography activity? (Select 3 answers)",
+    "options": [
+      "A. A choreography activity represents an interaction between two parties",
+      "B. A choreography activity can be one-way or two-way",
+      "C. A choreography activity captures a unit of work",
+      "D. A choreography activity can only follow another activity if the former involves the initiation of the latter activity",
+      "E. A choreography activity may involve more than two parties"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Correct answers (3): A. A choreography activity represents an interaction between two parties | B. A choreography activity can be one-way or two-way | C. A choreography activity captures a unit of work"
+  },
+  {
+    "id": 3100,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which complementary roles are typically involved in process discovery? (Select 2 answers)",
+    "options": [
+      "A. CEO",
+      "B. Process Analyst",
+      "C. Head of Enterprise Architecture",
+      "D. Domain Expert",
+      "E. CIO"
+    ],
+    "correctAnswers": [
+      1,
+      3
+    ],
+    "explanation": "Correct answers (2): B. Process Analyst | D. Domain Expert"
+  },
+  {
+    "id": 3101,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which of the following techniques are useful when prioritizing issues in a process? (Select 2 answers)",
+    "options": [
+      "A. Cause-effect diagrams",
+      "B. Why-why diagrams",
+      "C. Value-added analysis",
+      "D. Pareto",
+      "E. Issue register"
+    ],
+    "correctAnswers": [
+      3,
+      4
+    ],
+    "explanation": "Correct answers (2): D. Pareto | E. Issue register"
+  },
+  {
+    "id": 3102,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "The case-based work heuristic is the following: \"Consider removing batch processing and periodic activities from a business process\". To what class of redesign heuristics does this heuristic belong?",
+    "options": [
+      "A. Organization Heuristics",
+      "B. Infor Heuristics",
+      "C. Customer heuristics",
+      "D. Business Process Behavior Heuristics",
+      "E. BP Operation Heuristics"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. Business Process Behavior Heuristics"
+  },
+  {
+    "id": 3103,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which of the following is/are part of a product data model? (Select 3 answers)",
+    "options": [
+      "A. Infor elements",
+      "B. Leaf elements",
+      "C. A business process",
+      "D. Production rules",
+      "E. Performance characteristics"
+    ],
+    "correctAnswers": [
+      0,
+      3,
+      4
+    ],
+    "explanation": "Correct answers (3): A. Infor elements | D. Production rules | E. Performance characteristics"
+  },
+  {
+    "id": 3104,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "Which of the following tasks is NOT needed when automating a conceptual process model?",
+    "options": [
+      "A. Specify properties for messages, errors and signals",
+      "B. Convert send and receive tasks into service tasks",
+      "C. Remove physical data objects and data stores",
+      "D. Merge consecutive activities if allocated to the same resource"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. Merge consecutive activities if allocated to the same resource"
+  },
+  {
+    "id": 3105,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which of the following is NOT an activity?",
+    "options": [
+      "A. Check insurance policy details",
+      "B. Insurance policy does not cover the damage",
+      "C. Calculate settlement amount",
+      "D. Determine if customer is liable for damage"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Insurance policy does not cover the damage"
+  },
+  {
+    "id": 3106,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "According to Porter's classification of processes, which of the following is/are support processes? (Select 2 answers)",
+    "options": [
+      "A. The process for recovering overdue payments from customers",
+      "B. The process for handling requests from employees to take their annual vacation",
+      "C. The process for reimbursing travel expenditures to employees when returning from a business travel",
+      "D. The process for handling customer complaints (complaint-to-resolution)",
+      "E. The process for producing the annual report of the company"
+    ],
+    "correctAnswers": [
+      1,
+      2
+    ],
+    "explanation": "Correct answers (2): B. The process for handling requests from employees to take their annual vacation | C. The process for reimbursing travel expenditures to employees when returning from a business travel"
+  },
+  {
+    "id": 3107,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Various criteria can be used to select those processes that need to be analyzed and redesigned in order to improve their performance. Which are the most common ones? (Select 3 answers)",
+    "options": [
+      "A. Feasibility",
+      "B. Strategic importance",
+      "C. Case type dimension",
+      "D. Completeness",
+      "E. Health"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      4
+    ],
+    "explanation": "Correct answers (3): A. Feasibility | B. Strategic importance | E. Health"
+  },
+  {
+    "id": 3108,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Which of the following are possible reasons for decomposing a process model into sub-process models? (Select 2 answers)",
+    "options": [
+      "A. When the process model is getting too large to understand and maintain",
+      "B. When two events of the same type cannot be linked by a sequence flow",
+      "C. When there are too many crossing arcs in the model",
+      "D. When we want to avoid redundancies between multiple process models that share common parts",
+      "E. When there are too many end events in a process model and we wish to reduce their number"
+    ],
+    "correctAnswers": [
+      0,
+      3
+    ],
+    "explanation": "Correct answers (2): A. When the process model is getting too large to understand and maintain | D. When we want to avoid redundancies between multiple process models that share common parts"
+  },
+  {
+    "id": 3109,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "It automates a large number of tasks, replacing human workers (Select 2 answers)",
+    "options": [
+      "A. It reduces errors during handovers of work in a process",
+      "B. It provides transparency during the execution of processes"
+    ],
+    "correctAnswers": [
+      0,
+      1
+    ],
+    "explanation": "Correct answers (2): A. It reduces errors during handovers of work in a process | B. It provides transparency during the execution of processes"
+  },
+  {
+    "id": 3110,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "In a process-oriented organization, who is directly accountable for poor performance of a process?",
+    "options": [
+      "A. A The process participants",
+      "B. The executive management team",
+      "C. The process owner",
+      "D. The process analyst"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. The process owner"
+  },
+  {
+    "id": 3111,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Debtcollection (Select 3 answers)",
+    "options": [
+      "A. Bill-to-cash",
+      "B. Issue-to-resolution",
+      "C. Infrastructure inspection"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Correct answers (3): A. Bill-to-cash | B. Issue-to-resolution | C. Infrastructure inspection"
+  },
+  {
+    "id": 3112,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Let us consider the order-to-cash process of a company called CoolIT that sells air conditioning systems. Which of the following is likely to be modeled as a pool? (Select 2 answers)",
+    "options": [
+      "A. The customer",
+      "B. A salesperson at CoolIT",
+      "C. A clerk at the accounts payable department of CoolIT",
+      "D. The accounts receivable department of CoolIT",
+      "E. A subcontractor of CoolIT"
+    ],
+    "correctAnswers": [
+      0,
+      4
+    ],
+    "explanation": "Correct answers (2): A. The customer | E. A subcontractor of CoolIT"
+  },
+  {
+    "id": 3113,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "What are the biggest problems that enterprises are facing? (According to Zachman)",
+    "options": [
+      "A. Complexity and budget",
+      "B. Complexity and security",
+      "C. Complexity and change",
+      "D. Agility and remote work"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. Complexity and change"
+  },
+  {
+    "id": 3114,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which one is NOT an EA characteristic:",
+    "options": [
+      "A. EA captures the essentials of the business, IT and its evolution.",
+      "B. EA manages the complexity of the enterprise and its processes and systems.",
+      "C. A good EA will provide maximal flexibility and adaptation.",
+      "D. Each unit in an organization should develop its own EA.",
+      "E. A good EA should easily be extended and evolved."
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. Each unit in an organization should develop its own EA."
+  },
+  {
+    "id": 3115,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "What you first create when using Sparx EA? ( Single Choice)",
+    "options": [
+      "A. A diagram",
+      "B. An element",
+      "C. A package",
+      "D. A model"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. A model"
+  },
+  {
+    "id": 3116,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "What are the types of gateway and event? (Single Choice)",
+    "options": [
+      "A. Event-driven XOR and timer",
+      "B. OR and message",
+      "C. Data-driven XOR and message",
+      "D. Event-driven XOR and message"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. Event-driven XOR and message"
+  },
+  {
+    "id": 3117,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "_______ is defined as any collection of organizations that has a common set of goals.",
+    "options": [
+      "A. Architecture",
+      "B. Framework",
+      "C. Enterprise",
+      "D. None of the above"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. Enterprise"
+  },
+  {
+    "id": 3118,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "EA offers a holistic perspective of the----------------- , and on the actions that should be taken to achieve the company's goals.",
+    "options": [
+      "A. current operation",
+      "B. current and future operation",
+      "C. future operation",
+      "D. IT operation"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. current and future operation"
+  },
+  {
+    "id": 3119,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which one is NOT correct about the event-driven XOR:",
+    "options": [
+      "A. Proceeds after an invoice is issued and submitted",
+      "B. Proceeds after the payment is received",
+      "C. May proceed after 14 days",
+      "D. Will not proceed to debt collection if the payment is received in 14 days."
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. Proceeds after an invoice is issued and submitted"
+  },
+  {
+    "id": 3120,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "A part of the BuildCo company business process is shown below. When the event-driven XOR proceeds?",
+    "options": [
+      "A. Only when Delivery schedule received",
+      "B. Only when RO rejection received",
+      "C. When both A and B events happens",
+      "D. By one of the events mentioned in A and B"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. By one of the events mentioned in A and B"
+  },
+  {
+    "id": 3121,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "What is the type of BPMN element represented in blue color?",
+    "options": [
+      "A. Data object",
+      "B. Data store",
+      "C. Data output",
+      "D. None of the above"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Data store"
+  },
+  {
+    "id": 3122,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which of the following is correct? (Single Choice)",
+    "options": [
+      "A. Archimate models only EA domains",
+      "B. Archimate models all EA domains and relations between them.",
+      "C. Archimate defines a process for EA",
+      "D. Archimate is both a process and a language for EA"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Archimate models all EA domains and relations between them."
+  },
+  {
+    "id": 3123,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "Which of the following is NOT correct in Archimate modelling? (Single Choice)",
+    "options": [
+      "A. Business Process' is a business layer active structure concept",
+      "B. Business Process' is a business layer behavior concept",
+      "C. A collaboration represents an aggregate of two or more internal active structure elements",
+      "D. An interaction represents a unit of collective behavior that must be performed by two or more internal active structure elements"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Business Process' is a business layer behavior concept"
+  },
+  {
+    "id": 3124,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "An outcome is ________________",
+    "options": [
+      "A. A high-level statement of intent, direction or desired end state for an organization and its stakeholders.",
+      "B. A factor that prevents or obstructs the realization of goals.",
+      "C. A statement of need that must be met by the architecture.",
+      "D. An end result that has been achieved."
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. An end result that has been achieved."
+  },
+  {
+    "id": 3125,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Choose the one that a Resource can be assigned to (Select 2 answers)",
+    "options": [
+      "A. Capability",
+      "B. Facility",
+      "C. Device",
+      "D. Role"
+    ],
+    "correctAnswers": [
+      0,
+      3
+    ],
+    "explanation": "Correct answers (2): A. Capability | D. Role"
+  },
+  {
+    "id": 3126,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which of the following is true? (Single Choice)",
+    "options": [
+      "A. Specialist is a passive structure element.",
+      "B. High-Risk Claims adjudication is a business layer behavior concept.",
+      "C. Specialist is a type of Travel Insurance Claim Analyst.",
+      "D. ArchiSurance Contact Center is composed of three different types of interfaces."
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. ArchiSurance Contact Center is composed of three different types of interfaces."
+  },
+  {
+    "id": 3127,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "A business role is the responsibility for performing specific behavior, to which __________ can be assigned.",
+    "options": [
+      "A. An application role",
+      "B. A service",
+      "C. A model",
+      "D. An actor"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. An actor"
+  },
+  {
+    "id": 3128,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Generally, Behavior elements ________ Passive Structure elements.",
+    "options": [
+      "A. Realize",
+      "B. Access",
+      "C. Trigger",
+      "D. Serve"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Access"
+  },
+  {
+    "id": 3129,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Image B could be used to represent which one of the following concepts?",
+    "options": [
+      "A. Passive Structure element",
+      "B. Interface",
+      "C. Service",
+      "D. Collaboration"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. Service"
+  },
+  {
+    "id": 3130,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "Which one of the figures in the diagram represents a motivation layer element?",
+    "options": [
+      "A. A",
+      "B. B",
+      "C. C",
+      "D. None of the above"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. C"
+  },
+  {
+    "id": 3131,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "A business role is the responsibility for performing specific behavior, to which________________ can be assigned.",
+    "options": [
+      "A. An application role",
+      "B. A service",
+      "C. A model",
+      "D. An actor"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. An actor"
+  },
+  {
+    "id": 3132,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "A \"Data Object\" may realize a(n)",
+    "options": [
+      "A. System software",
+      "B. business object",
+      "C. application component",
+      "D. artifact"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. business object"
+  },
+  {
+    "id": 3133,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Generally, Behavior elements ______________Passive Structure elements.",
+    "options": [
+      "A. Realize",
+      "B. Access",
+      "C. Trigger",
+      "D. Serve"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Access"
+  },
+  {
+    "id": 3134,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "The relationship between 'Smart home' and IoT devices:",
+    "options": [
+      "A. implies an existence-dependency",
+      "B. does not imply an existence-dependency",
+      "C. is whole-part",
+      "D. None of the above"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. does not imply an existence-dependency"
+  },
+  {
+    "id": 3135,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Influence must points to a(n)__________Element.",
+    "options": [
+      "A. Behaviour",
+      "B. Strategy",
+      "C. Passive Structure",
+      "D. Motivation"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. Motivation"
+  },
+  {
+    "id": 3136,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "Which Archimate element can be used to model strategic plans of an enterprise?",
+    "options": [
+      "A. Capability",
+      "B. Process",
+      "C. Course of Action",
+      "D. Requirement",
+      "E. Collaboration"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. Course of Action"
+  },
+  {
+    "id": 3137,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which one of the following statements is NOT true about Motivation layer elements?",
+    "options": [
+      "A. The drivers can only originate from outside the organization.",
+      "B. They are used to model the motivations, or reasons, that guide the design or change of an Enterprise Architecture.",
+      "C. Concerns (internal drivers) are associated with stakeholders.",
+      "D. Stakeholders can be some individual human being or some group of human beings, such as a project team and CEO."
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. The drivers can only originate from outside the organization."
+  },
+  {
+    "id": 3138,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which concept from the Motivation extension is most appropriate to represent the value proposition of our products/services?",
+    "options": [
+      "A. Goal",
+      "B. Value",
+      "C. Driver",
+      "D. Assessment",
+      "E. Course of Action"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Value"
+  },
+  {
+    "id": 3139,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "What is the fourth aspect in the full framework for ArchiMate v3?",
+    "options": [
+      "A. Assessment",
+      "B. Goal",
+      "C. Motivation",
+      "D. Driver"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. Motivation"
+  },
+  {
+    "id": 3140,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "What is the correct order of layers in the Archimate full framework?",
+    "options": [
+      "A. Strategy, Business, Application, Technology, Physical, Implementation & Migration",
+      "B. Strategy, Motivation, Business, Application, Technology, Physical",
+      "C. Application, Business, Technology, Physical, Strategy, Implementation & Migration",
+      "D. Strategy, Business, Application, Technology, Physical, Motivation"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. Strategy, Business, Application, Technology, Physical, Implementation & Migration"
+  },
+  {
+    "id": 3141,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which statement is NOT true about Junctions?",
+    "options": [
+      "A. It is used to connect relationships of different types",
+      "B. Can be either an \"And\" junction or \"Or\" junction",
+      "C. It is used to connect relationships of the same type",
+      "D. It is in the relationship connector category"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. It is used to connect relationships of different types"
+  },
+  {
+    "id": 3142,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "In this partial screenshot of Sparx EA, we want to add a package/diagram/element to:",
+    "options": [
+      "A. Start page",
+      "B. Business Roles",
+      "C. Business Viewpoints",
+      "D. Business Architecture"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. Business Viewpoints"
+  },
+  {
+    "id": 3143,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "When we want to use Business Actors from the Architecture Library, we copy elements from the Business Actors diagram and paste them into a viewpoint diagram:",
+    "options": [
+      "A. As new elements",
+      "B. As links to the original elements",
+      "C. As duplicates",
+      "D. None of the above"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. As links to the original elements"
+  },
+  {
+    "id": 3144,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which relationships are normally used between behavior elements?",
+    "options": [
+      "A. Flow - Trigger",
+      "B. Access - Trigger",
+      "C. Association - flow",
+      "D. Realization - serving"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. Flow - Trigger"
+  },
+  {
+    "id": 3145,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "The _________ element is the main active structure element within the physical elements.",
+    "options": [
+      "A. Equipment",
+      "B. Smart home",
+      "C. Device",
+      "D. Material"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. Equipment"
+  },
+  {
+    "id": 3146,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "System Software is a __________of a node.",
+    "options": [
+      "A. Realization",
+      "B. Grouping",
+      "C. Generalization",
+      "D. Specialization"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. Specialization"
+  },
+  {
+    "id": 3147,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which of the following best represents the route the enterprise will take in achieving its mission and vision.",
+    "options": [
+      "A. business model",
+      "B. Strategy",
+      "C. Enterprise Architecture",
+      "D. culture",
+      "E. operation"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Strategy"
+  },
+  {
+    "id": 3148,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "\"Digital Customer management\" can be modelled as:",
+    "options": [
+      "A. Capability in the business layer",
+      "B. Resource in the business layer",
+      "C. Capability in the strategy layer",
+      "D. Resource in the strategy layer",
+      "E. None of the above"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. Capability in the strategy layer"
+  },
+  {
+    "id": 3149,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "The Henderson and Venkatraman Strategic Alignment Model (SAL) has ________dimensions and_________________perspectives.",
+    "options": [
+      "A. two - four",
+      "B. four - four",
+      "C. four - two",
+      "D. two -two"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. two - four"
+  },
+  {
+    "id": 3150,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "What is the name of the following alignment perspective: Start from the IT strategy, deriving the organizational infrastructure based on the IT infrastructure.",
+    "options": [
+      "A. Strategy execution",
+      "B. Technology Potential",
+      "C. Competitivepotential",
+      "D. Service Level"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. Service Level"
+  },
+  {
+    "id": 3151,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Whichofthefollowingstatement(s)areNOTtrue?",
+    "options": [
+      "A. The target of a message flow may be a task",
+      "B. The source of a message flow may be a task",
+      "C. A message flow can connect a task in a pool to the boundary of another pool",
+      "D. A message flow can connect a task in a pool to another task in the same pool",
+      "E. A message flow may lead to the creation of a data object by the task that receives the message"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. A message flow can connect a task in a pool to another task in the same pool"
+  },
+  {
+    "id": 3152,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "An IT hardware store provides a Web front-end allowing its customers to purchase IT equipment online (e.g. tablets, laptops, accessories, printers). In the context of the order-to-cash process of this company, which of the following is likely to be modeled as a data store? (Select 2 answers)",
+    "options": [
+      "A. The Customer Relationship Management (CRM) system",
+      "B. The shopping cart of a customer purchasing via the Web front-end",
+      "C. The history of a customer's past purchases",
+      "D. An invoice",
+      "E. The store's product catalog"
+    ],
+    "correctAnswers": [
+      0,
+      4
+    ],
+    "explanation": "Correct answers (2): A. The Customer Relationship Management (CRM) system | E. The store's product catalog"
+  },
+  {
+    "id": 3153,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "Which type of EA analysis is shown in the following diagram?",
+    "options": [
+      "A. Functional",
+      "B. Quantitative",
+      "C. Simulation",
+      "D. None of the above"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. Functional"
+  },
+  {
+    "id": 3154,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "The following is an example of performance measure in the view: 'The time between the moment that a customer arrives at a automobile service center and the moment of completion of the service.'",
+    "options": [
+      "A. completion time - process",
+      "B. completion time - user",
+      "C. response time - user",
+      "D. response time - process"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. response time - user"
+  },
+  {
+    "id": 3155,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "In the following diagram, the loop will continue until:",
+    "options": [
+      "A. until response is approved (decision)",
+      "B. until response is prepared",
+      "C. until response is reviewed",
+      "D. None of the above"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. until response is approved (decision)"
+  },
+  {
+    "id": 3156,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "How do you model the relationship between a stakeholder and drivers in Archimate diagrams?",
+    "options": [
+      "A. Association",
+      "B. Assignment",
+      "C. Composition",
+      "D. Flow"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. Association"
+  },
+  {
+    "id": 3157,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which statement is NOT true about Digital Customer Intimacy strategy?",
+    "options": [
+      "A. Can be modelled as a 'Requirement'",
+      "B. Can be realized by Digital Customer Management capability",
+      "C. is modelled in the strategy layer",
+      "D. means being continuously present and attuned to your customers, serving them and paying attention to them at all times, wherever they are online.",
+      "E. Can be modelled as a 'Course of Action'"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. Can be modelled as a 'Requirement'"
+  },
+  {
+    "id": 3158,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "What are types of the relationships?",
+    "options": [
+      "A. A: Realization B: Realization",
+      "B. A: Serving B: Realization",
+      "C. A: Realization B: Serving",
+      "D. None of the above"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. A: Realization B: Serving"
+  },
+  {
+    "id": 3159,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "What is the number of Application elements in the Application Usage Viewpoint?",
+    "options": [
+      "A. Four",
+      "B. Five",
+      "C. Nine",
+      "D. Hard to say"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Five"
+  },
+  {
+    "id": 3160,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "How do you model the relationship between 'Handle claim' and its sub-processes (for example: 'Register')?",
+    "options": [
+      "A. Aggregation",
+      "B. Access",
+      "C. Trigger",
+      "D. Flow",
+      "E. Influence"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. Aggregation"
+  },
+  {
+    "id": 3161,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "The PRO-FIT division of ArchiSurance has a new offering that is described by the following diagram. Which of the following statements most accurately interprets this diagram?",
+    "options": [
+      "A. RepairMaster is a business product that includes three services and is used by three different roles",
+      "B. RepairMaster is a business service that includes three products and is used by three different business actors",
+      "C. RepairMaster is a business object that holds information about three different services, and is accessed by three different roles",
+      "D. RepairMaster is a business product that delivers three different kinds of value to the three different roles that use it"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. RepairMaster is a business product that includes three services and is used by three different roles"
+  },
+  {
+    "id": 3162,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "Consider the following diagram. In which phase of the TOGAF Architecture Development Method (ADM) would such a view be most applicable?",
+    "options": [
+      "A. Phase D: Technology Architecture",
+      "B. Preliminary Phase",
+      "C. Phase C: Information Systems Architectures",
+      "D. Phase B: Business Architecture"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. Phase C: Information Systems Architectures"
+  },
+  {
+    "id": 3163,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "Which of the following are NOT possible reasons for decomposing a process model into sub- process models? (specify all correct answers)",
+    "options": [
+      "A. When two events of the same type cannot be linked by a sequence flow",
+      "B. When the process model is getting too large to understand and maintain",
+      "C. When there are too many crossing arcs in the model",
+      "D. When we want to avoid redundancies between multiple process models that share common parts",
+      "E. When there are too many end events in a process model and we wish to reduce their number",
+      "F. B and C and D",
+      "G. A and E",
+      "H. A and C",
+      "I. E"
+    ],
+    "correctAnswers": [
+      6
+    ],
+    "explanation": "Correct answer: G. A and E"
+  },
+  {
+    "id": 3164,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "Which of the following cannot be modeled by an MI activity in BPMN:",
+    "options": [
+      "A. Preparing and reviewing response and repeating until approval",
+      "B. Request quotes from multiple suppliers",
+      "C. Check the availability for each line item in an order separately",
+      "D. Send and gather questionnaires from multiple witnesses in the context of an insurance claim"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. Preparing and reviewing response and repeating until approval"
+  },
+  {
+    "id": 3165,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "A_________________is the potential impact (asset loss, damage, or destruction) resulting from the exploit of a vulnerability.",
+    "options": [
+      "A. SecurityIncident",
+      "B. Threat",
+      "C. Security Risk",
+      "D. Attack"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. Security Risk"
+  },
+  {
+    "id": 3166,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "A high control strength____________ the vulnerability level.",
+    "options": [
+      "A. increases",
+      "B. reduces",
+      "C. heightens",
+      "D. don'taffect"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. reduces"
+  },
+  {
+    "id": 3167,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Risk is the product of the__________________________",
+    "options": [
+      "A. frequency of a loss occurring and the vulnerability level.",
+      "B. threat capability and the impact of the loss.",
+      "C. control strength and the impact of the loss.",
+      "D. likelihood of a loss occurring and the impact of the loss."
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. likelihood of a loss occurring and the impact of the loss."
+  },
+  {
+    "id": 3168,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "The vulnerability level of \"Weak encryption of payment data\" is____________ \"Insecure transmission channel\".",
+    "options": [
+      "A. equal",
+      "B. lower than",
+      "C. higher than",
+      "D. None of the above"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. lower than"
+  },
+  {
+    "id": 3169,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "A___________________ of the transmission of payment data from a web shop to an online payment provider has shown that the encryption level of transmitted payment records is low (e.g. due to an outdated version of the used encryption protocol).",
+    "options": [
+      "A. vulnerability scan",
+      "B. risk assessment",
+      "C. threat hunting",
+      "D. risk management",
+      "E. threat modeling"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. vulnerability scan"
+  },
+  {
+    "id": 3170,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "The push notification service is based on_______________ different types of messages and creates _______________ value(s) for the Insurer.",
+    "options": [
+      "A. three - one",
+      "B. four - four",
+      "C. one - one",
+      "D. four - one"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. three - one"
+  },
+  {
+    "id": 3171,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "The following shows the EA analysis result for removing Archisurance intermediaries. Which application component will be impacted?",
+    "options": [
+      "A. CRM system",
+      "B. Policy administration",
+      "C. Customer administration",
+      "D. Policy creation"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. CRM system"
+  },
+  {
+    "id": 3172,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "In one instance of the process shown below, Review RO starts at 11 AM exactly and takes 2 hours to complete. When will the clerk be notified?bpmn3",
+    "options": [
+      "A. 1 PM",
+      "B. 12 noon",
+      "C. 11 AM",
+      "D. never"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. 1 PM"
+  },
+  {
+    "id": 3173,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "A water utility company provides drinking water to residents and businesses in a city of one million inhabitants, as well wastewater treatment services to the city council. Which processes are likely to be core processes of this company. Choose one or more: (Select 3 answers)",
+    "options": [
+      "A. Bill-to-cash",
+      "B. Procure-to-pay",
+      "C. Issue-to-resolution",
+      "D. Infrastructure inspection",
+      "E. Debt collection"
+    ],
+    "correctAnswers": [
+      0,
+      2,
+      3
+    ],
+    "explanation": "Correct answers (3): A. Bill-to-cash | C. Issue-to-resolution | D. Infrastructure inspection"
+  },
+  {
+    "id": 3174,
+    "lectureId": 12,
+    "type": "multiple-answer",
+    "difficulty": "Hard",
+    "question": "Let us consider the order-to-cash process of a company called CoolIT that sells air conditioning systems. Which of the following is likely to be modeled as a pool? Choose one or more: (Select 2 answers)",
+    "options": [
+      "A. The customer",
+      "B. A salesperson at Cool IT",
+      "C. A clerk at the accounts payable department of Cool IT",
+      "D. The accounts receivable department of Cool IT",
+      "E. A subcontractor of Cool IT"
+    ],
+    "correctAnswers": [
+      0,
+      4
+    ],
+    "explanation": "Correct answers (2): A. The customer | E. A subcontractor of Cool IT"
+  },
+  {
+    "id": 3175,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "_______________is defined as any collection of organizations that has a common set of goals.",
+    "options": [
+      "A. Architecture",
+      "B. Framework",
+      "C. Enterprise",
+      "D. None of the above"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Correct answer: C. Enterprise"
+  },
+  {
+    "id": 3176,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "EA offers a holistic perspective of the--------------- , and on the actions that should be taken to achieve the company's goals.",
+    "options": [
+      "A. current operation",
+      "B. current and future operation",
+      "C. future operation",
+      "D. IT operation"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. current and future operation"
+  },
+  {
+    "id": 3177,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Hard",
+    "question": "Which of the following is NOT correct in Archimate modelling? (Single Choice)",
+    "options": [
+      "A. 'Business Process' is a business layer active structure concept",
+      "B. 'Business Process' is a business layer behavior concept",
+      "C. A collaboration represents an aggregate of two or more internal active structure elements",
+      "D. An interaction represents a unit of collective behavior that must be performed by two or more internal active structure elements"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. 'Business Process' is a business layer active structure concept"
+  },
+  {
+    "id": 3178,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "An outcome is ___________________________",
+    "options": [
+      "A. A high-level statement of intent, direction or desired end state for an organization and its stakeholders.",
+      "B. A factor that prevents or obstructs the realization of goals.",
+      "C. A statement of need that must be met by the architecture.",
+      "D. An end result that has been achieved."
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. An end result that has been achieved."
+  },
+  {
+    "id": 3179,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "A business role is the responsibility for performing specific behavior, to which_________ can be assigned.",
+    "options": [
+      "A. An application role",
+      "B. A service",
+      "C. Amodel",
+      "D. Anactor"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. Anactor"
+  },
+  {
+    "id": 3180,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Generally, Behavior elements Passive Structure elements.",
+    "options": [
+      "A. Realize",
+      "B. Access",
+      "C. Trigger",
+      "D. Serve"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Access"
+  }
+];
+
+  window._BPS301_DATA.push({ study, quiz });
+})();
