@@ -394,24 +394,6 @@
       explanation: "Correct answer: A. The AND-join preceding task F",
     },
     {
-      id: 3023,
-      lectureId: 12,
-      type: "multiple-answer",
-      difficulty: "Hard",
-      question:
-        "An IT hardware store provides a Web front-end allowing its customers to purchase IT equipment online (e.g. tablets, laptops, accessories, printers). In the context of the order-to - cash process of this company, which of the following is likely to be modeled as a data store? (Select 2 answers)",
-      options: [
-        "A. The Customer Relationship Management (CRM) system",
-        "B. The shopping cart of a customer purchasing via the Web front-end",
-        "C. The history of a customer's past purchases",
-        "D. An invoice",
-        "E. The store's product catalog",
-      ],
-      correctAnswers: [0, 4],
-      explanation:
-        "Correct answers (2): A. The Customer Relationship Management (CRM) system | E. The store's product catalog",
-    },
-    {
       id: 3024,
       lectureId: 12,
       type: "multiple-answer",
@@ -972,14 +954,14 @@
       difficulty: "Medium",
       question: "Which of the following is NOT an activity?",
       options: [
-        "A. Determine if customer is liable for damage",
-        "B. Check insurance policy details",
+        "A. Check insurance policy details",
+        "B. Insurance policy does not cover the damage",
         "C. Calculate settlement amount",
-        "D. Insurance policy does not cover the damage",
+        "D. Determine if customer is liable for damage",
       ],
-      correctAnswers: [3],
+      correctAnswers: [1],
       explanation:
-        "Correct answer: D. Insurance policy does not cover the damage",
+        "Correct answer: B. Insurance policy does not cover the damage",
     },
     {
       id: 3058,
@@ -1482,18 +1464,18 @@
     {
       id: 3089,
       lectureId: 12,
-      type: "multiple-answer",
-      difficulty: "Hard",
+      type: "multiple-choice",
+      difficulty: "Medium",
       question:
-        "What is the relationship between Flower Seller and Sales? (Select 2 answers)",
+        "What is the relationship between Flower Seller and Sales? (Single Choice)",
       options: [
         "A. Composition",
         "B. Aggregation",
         "C. Assignment",
         "D. Serving",
       ],
-      correctAnswers: [1, 2],
-      explanation: "Correct answers (2): B. Aggregation | C. Assignment",
+      correctAnswers: [2],
+      explanation: "Correct answer: C. Assignment",
     },
     {
       id: 3090,
@@ -1504,7 +1486,7 @@
         "A business role is the responsibility for performing specific behavior, to which ______ can be assigned.",
       options: [
         "A. An application role",
-        "B. B.A service",
+        "B. A service",
         "C. A model",
         "D. An actor",
       ],
@@ -1691,41 +1673,6 @@
       explanation: "Correct answers (2): D. Pareto | E. Issue register",
     },
     {
-      id: 3102,
-      lectureId: 12,
-      type: "multiple-choice",
-      difficulty: "Medium",
-      question:
-        'The case-based work heuristic is the following: "Consider removing batch processing and periodic activities from a business process". To what class of redesign heuristics does this heuristic belong?',
-      options: [
-        "A. Organization Heuristics",
-        "B. Infor Heuristics",
-        "C. Customer heuristics",
-        "D. Business Process Behavior Heuristics",
-        "E. BP Operation Heuristics",
-      ],
-      correctAnswers: [3],
-      explanation: "Correct answer: D. Business Process Behavior Heuristics",
-    },
-    {
-      id: 3103,
-      lectureId: 12,
-      type: "multiple-answer",
-      difficulty: "Hard",
-      question:
-        "Which of the following is/are part of a product data model? (Select 3 answers)",
-      options: [
-        "A. Infor elements",
-        "B. Leaf elements",
-        "C. A business process",
-        "D. Production rules",
-        "E. Performance characteristics",
-      ],
-      correctAnswers: [0, 3, 4],
-      explanation:
-        "Correct answers (3): A. Infor elements | D. Production rules | E. Performance characteristics",
-    },
-    {
       id: 3104,
       lectureId: 12,
       type: "multiple-choice",
@@ -1741,22 +1688,6 @@
       correctAnswers: [3],
       explanation:
         "Correct answer: D. Merge consecutive activities if allocated to the same resource",
-    },
-    {
-      id: 3105,
-      lectureId: 12,
-      type: "multiple-choice",
-      difficulty: "Medium",
-      question: "Which of the following is NOT an activity?",
-      options: [
-        "A. Determine if customer is liable for damage",
-        "B. Check insurance policy details",
-        "C. Calculate settlement amount",
-        "D. Insurance policy does not cover the damage",
-      ],
-      correctAnswers: [3],
-      explanation:
-        "Correct answer: D. Insurance policy does not cover the damage",
     },
     {
       id: 3106,
@@ -1824,37 +1755,6 @@
       correctAnswers: [0],
       explanation:
         "Correct answer: A. Two-stage VAA is a structured method for analyzing process time by first distinguishing between value-added and non-value-added activities, and then further breaking down the non-value-added portion to identify inefficiencies such as rework, delays, or waste.",
-    },
-    {
-      id: 3110,
-      lectureId: 12,
-      type: "multiple-choice",
-      difficulty: "Medium",
-      question:
-        "In a process-oriented organization, who is directly accountable for poor performance of a process?",
-      options: [
-        "A. A The process participants",
-        "B. The executive management team",
-        "C. The process owner",
-        "D. The process analyst",
-      ],
-      correctAnswers: [2],
-      explanation: "Correct answer: C. The process owner",
-    },
-    {
-      id: 3111,
-      lectureId: 12,
-      type: "multiple-answer",
-      difficulty: "Hard",
-      question: "Debtcollection (Select 3 answers)",
-      options: [
-        "A. Bill-to-cash",
-        "B. Issue-to-resolution",
-        "C. Infrastructure inspection",
-      ],
-      correctAnswers: [0, 1, 2],
-      explanation:
-        "Correct answers (3): A. Bill-to-cash | B. Issue-to-resolution | C. Infrastructure inspection",
     },
     {
       id: 3112,
@@ -2071,22 +1971,6 @@
         "Correct answer: D. ArchiSurance Contact Center is composed of three different types of interfaces.",
     },
     {
-      id: 3127,
-      lectureId: 12,
-      type: "multiple-choice",
-      difficulty: "Medium",
-      question:
-        "A business role is the responsibility for performing specific behavior, to which __________ can be assigned.",
-      options: [
-        "A. An application role",
-        "B. A service",
-        "C. A model",
-        "D. An actor",
-      ],
-      correctAnswers: [3],
-      explanation: "Correct answer: D. An actor",
-    },
-    {
       id: 3129,
       lectureId: 12,
       type: "multiple-choice",
@@ -2112,22 +1996,6 @@
       options: ["A. A", "B. B", "C. C", "D. None of the above"],
       correctAnswers: [2],
       explanation: "Correct answer: C. C",
-    },
-    {
-      id: 3131,
-      lectureId: 12,
-      type: "multiple-choice",
-      difficulty: "Medium",
-      question:
-        "A business role is the responsibility for performing specific behavior, to which________________ can be assigned.",
-      options: [
-        "A. An application role",
-        "B. A service",
-        "C. A model",
-        "D. An actor",
-      ],
-      correctAnswers: [3],
-      explanation: "Correct answer: D. An actor",
     },
     {
       id: 3132,
@@ -2637,7 +2505,12 @@
       type: "multiple-choice",
       difficulty: "Medium",
       question: "A high control strength____________ the vulnerability level.",
-      options: ["A. increases", "B. reduces", "C. heightens", "D. don'taffect"],
+      options: [
+        "A. increases",
+        "B. reduces",
+        "C. heightens",
+        "D. don't affect",
+      ],
       correctAnswers: [1],
       explanation: "Correct answer: B. reduces",
     },
@@ -2734,24 +2607,6 @@
       explanation: "Correct answer: A. 1 PM",
     },
     {
-      id: 3173,
-      lectureId: 12,
-      type: "multiple-answer",
-      difficulty: "Hard",
-      question:
-        "A water utility company provides drinking water to residents and businesses in a city of one million inhabitants, as well wastewater treatment services to the city council. Which processes are likely to be core processes of this company. Choose one or more: (Select 3 answers)",
-      options: [
-        "A. Bill-to-cash",
-        "B. Procure-to-pay",
-        "C. Issue-to-resolution",
-        "D. Infrastructure inspection",
-        "E. Debt collection",
-      ],
-      correctAnswers: [0, 2, 3],
-      explanation:
-        "Correct answers (3): A. Bill-to-cash | C. Issue-to-resolution | D. Infrastructure inspection",
-    },
-    {
       id: 3174,
       lectureId: 12,
       type: "multiple-answer",
@@ -2832,22 +2687,6 @@
       ],
       correctAnswers: [3],
       explanation: "Correct answer: D. An end result that has been achieved.",
-    },
-    {
-      id: 3179,
-      lectureId: 12,
-      type: "multiple-choice",
-      difficulty: "Medium",
-      question:
-        "A business role is the responsibility for performing specific behavior, to which_________ can be assigned.",
-      options: [
-        "A. An application role",
-        "B. A service",
-        "C. Amodel",
-        "D. Anactor",
-      ],
-      correctAnswers: [3],
-      explanation: "Correct answer: D. Anactor",
     },
     {
       id: 3181,
