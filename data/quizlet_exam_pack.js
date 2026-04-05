@@ -1064,16 +1064,17 @@
     "lectureId": 12,
     "type": "multiple-choice",
     "difficulty": "Medium",
-    "question": "Which of the following is NOT an activity?A. Determine if customer is liable for damage",
+    "question": "Which of the following is NOT an activity?",
     "options": [
-      "A. Check insurance policy details",
-      "B. Calculate settlement amount",
-      "C. Insurance policy does not cover the damage"
+      "A. Determine if customer is liable for damage",
+      "B. Check insurance policy details",
+      "C. Calculate settlement amount",
+      "D. Insurance policy does not cover the damage"
     ],
     "correctAnswers": [
       3
     ],
-    "explanation": "Correct answer: "
+    "explanation": "Correct answer: D. Insurance policy does not cover the damage"
   },
   {
     "id": 3058,
@@ -1919,15 +1920,15 @@
     "difficulty": "Medium",
     "question": "Which of the following is NOT an activity?",
     "options": [
-      "A. Check insurance policy details",
-      "B. Insurance policy does not cover the damage",
+      "A. Determine if customer is liable for damage",
+      "B. Check insurance policy details",
       "C. Calculate settlement amount",
-      "D. Determine if customer is liable for damage"
+      "D. Insurance policy does not cover the damage"
     ],
     "correctAnswers": [
-      1
+      3
     ],
-    "explanation": "Correct answer: B. Insurance policy does not cover the damage"
+    "explanation": "Correct answer: D. Insurance policy does not cover the damage"
   },
   {
     "id": 3106,
