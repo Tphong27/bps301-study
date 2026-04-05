@@ -1303,22 +1303,6 @@
       explanation: "Correct answer: B. Current and future operation",
     },
     {
-      id: 3079,
-      lectureId: 12,
-      type: "multiple-choice",
-      difficulty: "Medium",
-      question: "Which one is not current about the event-driven XOR?",
-      options: [
-        "A. Proceeds after an invoice is issued and submitted",
-        "B. Proceeds after the payment is received",
-        "C. May proceed after 14 days",
-        "D. Will not proceed to debt collection if the payment is received in 14 days",
-      ],
-      correctAnswers: [3],
-      explanation:
-        "Correct answer: D. Will not proceed to debt collection if the payment is received in 14 days",
-    },
-    {
       id: 3081,
       lectureId: 12,
       type: "multiple-choice",
