@@ -2029,23 +2029,6 @@
         "Correct answer: B. Archimate models all EA domains and relations between them.",
     },
     {
-      id: 3123,
-      lectureId: 12,
-      type: "multiple-choice",
-      difficulty: "Hard",
-      question:
-        "Which of the following is NOT correct in Archimate modelling? (Single Choice)",
-      options: [
-        "A. Business Process' is a business layer active structure concept",
-        "B. Business Process' is a business layer behavior concept",
-        "C. A collaboration represents an aggregate of two or more internal active structure elements",
-        "D. An interaction represents a unit of collective behavior that must be performed by two or more internal active structure elements",
-      ],
-      correctAnswers: [1],
-      explanation:
-        "Correct answer: B. Business Process' is a business layer behavior concept",
-    },
-    {
       id: 3124,
       lectureId: 12,
       type: "multiple-choice",
@@ -2104,17 +2087,6 @@
       explanation: "Correct answer: D. An actor",
     },
     {
-      id: 3128,
-      lectureId: 12,
-      type: "multiple-choice",
-      difficulty: "Medium",
-      question:
-        "Generally, Behavior elements ________ Passive Structure elements.",
-      options: ["A. Realize", "B. Access", "C. Trigger", "D. Serve"],
-      correctAnswers: [1],
-      explanation: "Correct answer: B. Access",
-    },
-    {
       id: 3129,
       lectureId: 12,
       type: "multiple-choice",
@@ -2171,17 +2143,6 @@
       ],
       correctAnswers: [1],
       explanation: "Correct answer: B. business object",
-    },
-    {
-      id: 3133,
-      lectureId: 12,
-      type: "multiple-choice",
-      difficulty: "Medium",
-      question:
-        "Generally, Behavior elements ______________Passive Structure elements.",
-      options: ["A. Realize", "B. Access", "C. Trigger", "D. Serve"],
-      correctAnswers: [1],
-      explanation: "Correct answer: B. Access",
     },
     {
       id: 3134,
@@ -2887,16 +2848,6 @@
       ],
       correctAnswers: [3],
       explanation: "Correct answer: D. Anactor",
-    },
-    {
-      id: 3180,
-      lectureId: 12,
-      type: "multiple-choice",
-      difficulty: "Medium",
-      question: "Generally, Behavior elements Passive Structure elements.",
-      options: ["A. Realize", "B. Access", "C. Trigger", "D. Serve"],
-      correctAnswers: [1],
-      explanation: "Correct answer: B. Access",
     },
     {
       id: 3181,
