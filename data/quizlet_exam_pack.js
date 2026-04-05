@@ -1319,23 +1319,6 @@
         "Correct answer: D. Will not proceed to debt collection if the payment is received in 14 days",
     },
     {
-      id: 3080,
-      lectureId: 12,
-      type: "multiple-choice",
-      difficulty: "Hard",
-      question:
-        "A part of the BuildCo company business process is shown below. When does the event-driven XOR proceed?",
-      options: [
-        "A. Only when Delivery schedule received",
-        "B. Only when RO rejection received",
-        "C. When both A and B events happens",
-        "D. By one of the events mentioned in A and B",
-      ],
-      correctAnswers: [3],
-      explanation:
-        "Correct answer: D. By one of the events mentioned in A and B",
-    },
-    {
       id: 3081,
       lectureId: 12,
       type: "multiple-choice",
