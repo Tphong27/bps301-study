@@ -473,15 +473,18 @@
     "lectureId": 12,
     "type": "multiple-choice",
     "difficulty": "Medium",
-    "question": "receive task",
+    "question": "What is wrong with this collaboration diagram?",
     "options": [
-      "A. This collaboration may deadlock if the seller is already registered",
-      "B. An internal decision in one party must be matched by an XOR-join in the other party"
+      "A. This collaboration can be fixed by replacing the XOR-split with an event-based gateway",
+      "B. The XOR-join needs to be replaced by an OR-join",
+      "C. The intermediate message flow in the Auctioning Service pool should be replaced by a receive task",
+      "D. This collaboration may deadlock if the seller is already registered",
+      "E. An internal decision in one party must be matched by an XOR-join in the other party"
     ],
     "correctAnswers": [
       3
     ],
-    "explanation": "Correct answer: "
+    "explanation": "Correct answer: D. This collaboration may deadlock if the seller is already registered"
   },
   {
     "id": 3026,
