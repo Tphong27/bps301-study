@@ -821,20 +821,19 @@
     "lectureId": 12,
     "type": "multiple-answer",
     "difficulty": "Hard",
-    "question": "Which of the following are explicit benefits that the use a BPMS brings to an organization. (Select 3 answers)",
+    "question": "Which of the following are explicit benefits that the use of a BPMS brings to an organization? (Select 2 answers)",
     "options": [
-      "A. It allows to reduce errors during handovers of work in a process",
-      "B. It helps to enforce key business rules",
-      "C. It provides transparency during the execution of processes",
-      "D. It allows to efficiently store business-critical data",
+      "A. It reduces errors during handovers of work in a process",
+      "B. It allows to efficiently store business-critical data",
+      "C. It helps to enforce key business rules",
+      "D. It provides transparency during the execution of processes",
       "E. It automates a large number of tasks, replacing human workers"
     ],
     "correctAnswers": [
       0,
-      1,
-      2
+      3
     ],
-    "explanation": "Correct answers (3): A. It allows to reduce errors during handovers of work in a process | B. It helps to enforce key business rules | C. It provides transparency during the execution of processes"
+    "explanation": "Correct answers (2): A. It reduces errors during handovers of work in a process | D. It provides transparency during the execution of processes"
   },
   {
     "id": 3045,
@@ -1991,18 +1990,16 @@
   {
     "id": 3109,
     "lectureId": 12,
-    "type": "multiple-answer",
-    "difficulty": "Hard",
-    "question": "It automates a large number of tasks, replacing human workers (Select 2 answers)",
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "2 stage VAA?",
     "options": [
-      "A. It reduces errors during handovers of work in a process",
-      "B. It provides transparency during the execution of processes"
+      "A. Two-stage VAA is a structured method for analyzing process time by first distinguishing between value-added and non-value-added activities, and then further breaking down the non-value-added portion to identify inefficiencies such as rework, delays, or waste."
     ],
     "correctAnswers": [
-      0,
-      1
+      0
     ],
-    "explanation": "Correct answers (2): A. It reduces errors during handovers of work in a process | B. It provides transparency during the execution of processes"
+    "explanation": "Correct answer: A. Two-stage VAA is a structured method for analyzing process time by first distinguishing between value-added and non-value-added activities, and then further breaking down the non-value-added portion to identify inefficiencies such as rework, delays, or waste."
   },
   {
     "id": 3110,
