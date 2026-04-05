@@ -3235,6 +3235,74 @@
       1
     ],
     "explanation": "Correct answer: B. Access"
+  },
+  {
+    "id": 3181,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Due to specialization and division of labor, not all of the tasks associated with a process will be performed by the same labor resource. This has driven to a state called ___.",
+    "options": [
+      "A. fragmented process knowledge",
+      "B. process overlay",
+      "C. analyst dilemma",
+      "D. labor division"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Correct answer: A. fragmented process knowledge"
+  },
+  {
+    "id": 3182,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "___ helps define criteria for assessing the performance of identified business processes.",
+    "options": [
+      "A. Process selection",
+      "B. Process context",
+      "C. Process category",
+      "D. Process derivative"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. Process context"
+  },
+  {
+    "id": 3183,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "When two or more activities are alternative to each other, they are considered ___.",
+    "options": [
+      "A. concurrent",
+      "B. mutually exclusive",
+      "C. independent path",
+      "D. independent methods"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Correct answer: B. mutually exclusive"
+  },
+  {
+    "id": 3184,
+    "lectureId": 12,
+    "type": "multiple-choice",
+    "difficulty": "Medium",
+    "question": "Which of the following is NOT considered an evidence-based method?",
+    "options": [
+      "A. Observation",
+      "B. Document analysis",
+      "C. Automated discovery",
+      "D. Process delineation"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Correct answer: D. Process delineation"
   }
 ];
 
