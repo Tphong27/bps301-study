@@ -1294,10 +1294,10 @@
       question:
         "EA offers a holistic perspective of the __, and on the actions that should be taken to achieve the company's goals",
       options: [
-        "A. Current operation",
-        "B. Current and future operation",
-        "C. Future operation",
-        "D. IT operation",
+        "A. current operation",
+        "B. current and future operation",
+        "C. future operation",
+        "D. iT operation",
       ],
       correctAnswers: [1],
       explanation: "Correct answer: B. Current and future operation",
@@ -1847,22 +1847,6 @@
       ],
       correctAnswers: [2],
       explanation: "Correct answer: C. Enterprise",
-    },
-    {
-      id: 3118,
-      lectureId: 12,
-      type: "multiple-choice",
-      difficulty: "Medium",
-      question:
-        "EA offers a holistic perspective of the----------------- , and on the actions that should be taken to achieve the company's goals.",
-      options: [
-        "A. current operation",
-        "B. current and future operation",
-        "C. future operation",
-        "D. IT operation",
-      ],
-      correctAnswers: [1],
-      explanation: "Correct answer: B. current and future operation",
     },
     {
       id: 3119,
@@ -2639,22 +2623,6 @@
       ],
       correctAnswers: [2],
       explanation: "Correct answer: C. Enterprise",
-    },
-    {
-      id: 3176,
-      lectureId: 12,
-      type: "multiple-choice",
-      difficulty: "Medium",
-      question:
-        "EA offers a holistic perspective of the ______________ , and on the actions that should be taken to achieve the company's goals.",
-      options: [
-        "A. current operation",
-        "B. current and future operation",
-        "C. future operation",
-        "D. IT operation",
-      ],
-      correctAnswers: [1],
-      explanation: "Correct answer: B. current and future operation",
     },
     {
       id: 3177,
