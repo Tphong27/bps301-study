@@ -364,7 +364,8 @@
       lectureId: 12,
       type: "multiple-answer",
       difficulty: "Hard",
-      question: "Bạn chưa học các thuật ngữ này! (Select 2 answers)",
+      question:
+        "The following BPMN diagram contains two incorrect gateways. Which ones? (Select 2 answers)",
       options: [
         'A. The XOR gateway after task "Store and print notice"',
         'B. The XOR gateway preceding task "Hand out cards"',
@@ -2447,23 +2448,6 @@
       explanation: "Correct answer: D. Service Level",
     },
     {
-      id: 3151,
-      lectureId: 12,
-      type: "multiple-choice",
-      difficulty: "Medium",
-      question: "Whichofthefollowingstatement(s)areNOTtrue?",
-      options: [
-        "A. The target of a message flow may be a task",
-        "B. The source of a message flow may be a task",
-        "C. A message flow can connect a task in a pool to the boundary of another pool",
-        "D. A message flow can connect a task in a pool to another task in the same pool",
-        "E. A message flow may lead to the creation of a data object by the task that receives the message",
-      ],
-      correctAnswers: [3],
-      explanation:
-        "Correct answer: D. A message flow can connect a task in a pool to another task in the same pool",
-    },
-    {
       id: 3152,
       lectureId: 12,
       type: "multiple-answer",
@@ -2977,6 +2961,23 @@
       ],
       correctAnswers: [3],
       explanation: "Correct answer: D. Process delineation",
+    },
+    {
+      id: 3185,
+      lectureId: 12,
+      type: "multiple-choice",
+      difficulty: "Medium",
+      question: "Which of the following statement(s) are NOT true?",
+      options: [
+        "A. The target of a message flow may be a task",
+        "B. The source of a message flow may be a task",
+        "C. A message flow can connect a task in a pool to the boundary of another pool",
+        "D. A message flow can connect a task in a pool to another task in the same pool",
+        "E. A message flow may lead to the creation of a data object by the task that receives the message",
+      ],
+      correctAnswers: [3],
+      explanation:
+        "Correct answer: D. A message flow can connect a task in a pool to another task in the same pool",
     },
   ];
 
