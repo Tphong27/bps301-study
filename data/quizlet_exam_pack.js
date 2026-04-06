@@ -1233,16 +1233,16 @@
       lectureId: 12,
       type: "multiple-answer",
       difficulty: "Hard",
-      question: "When does the OR-join Gateway proceed? (Select 2 answers)",
+      question: "When does the OR-join Gateway proceed?",
       options: [
         "A. When all active incoming branches have completed.",
         "B. When a token arrives in one of the incoming branches.",
         "C. When it receives tokens in both incoming branches.",
         "D. When one of the active branches have completed.",
       ],
-      correctAnswers: [0, 3],
+      correctAnswers: [3],
       explanation:
-        "Correct answers (2): A. When all active incoming branches have completed. | D. When one of the active branches have completed.",
+        "Correct answer: D. When one of the active branches have completed.",
     },
     {
       id: 3075,
