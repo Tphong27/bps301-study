@@ -935,7 +935,7 @@
       type: "multiple-answer",
       difficulty: "Hard",
       question:
-        "Which of the following stages of the BPM lifecycle is defined as the act of gathering information about an existing process and organizing it in terms of an as-is process model? (Select 2 answers)",
+        "Which of the following stages of the BPM lifecycle is defined as the act of gathering information about an existing process and organizing it in terms of an as-is process model?",
       options: [
         "A. Process Implementation",
         "B. Process Redesign",
@@ -943,9 +943,8 @@
         "D. Process Analysis",
         "E. Process Discovery",
       ],
-      correctAnswers: [2, 4],
-      explanation:
-        "Correct answers (2): C. Process Identification | E. Process Discovery",
+      correctAnswers: [4],
+      explanation: "Correct answer: E. Process Discovery",
     },
     {
       id: 3057,
