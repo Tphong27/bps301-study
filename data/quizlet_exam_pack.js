@@ -1848,21 +1848,6 @@
         "Correct answer: D. By one of the events mentioned in A and B",
     },
     {
-      id: 3121,
-      lectureId: 12,
-      type: "multiple-choice",
-      difficulty: "Medium",
-      question: "What is the type of BPMN element represented in blue color?",
-      options: [
-        "A. Data object",
-        "B. Data store",
-        "C. Data output",
-        "D. None of the above",
-      ],
-      correctAnswers: [1],
-      explanation: "Correct answer: B. Data store",
-    },
-    {
       id: 3122,
       lectureId: 12,
       type: "multiple-choice",
