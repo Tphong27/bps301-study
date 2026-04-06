@@ -735,7 +735,7 @@
       type: "multiple-answer",
       difficulty: "Hard",
       question:
-        "Which of the following are explicit benefits that the use of a BPMS brings to an organization? (Select 2 answers)",
+        "Which of the following are explicit benefits that the use of a BPMS brings to an organization? (Select 3 answers)",
       options: [
         "A. It reduces errors during handovers of work in a process",
         "B. It allows to efficiently store business-critical data",
@@ -743,9 +743,9 @@
         "D. It provides transparency during the execution of processes",
         "E. It automates a large number of tasks, replacing human workers",
       ],
-      correctAnswers: [0, 3],
+      correctAnswers: [0, 2, 3],
       explanation:
-        "Correct answers (2): A. It reduces errors during handovers of work in a process | D. It provides transparency during the execution of processes",
+        "Correct answers (3): A. It reduces errors during handovers of work in a process | C. It helps to enforce key business rules | D. It provides transparency during the execution of processes",
     },
     {
       id: 3045,
