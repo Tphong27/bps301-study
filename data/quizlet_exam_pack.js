@@ -2671,23 +2671,6 @@
       correctAnswers: [3],
       explanation: "Correct answer: D. Process delineation",
     },
-    {
-      id: 3185,
-      lectureId: 12,
-      type: "multiple-choice",
-      difficulty: "Medium",
-      question: "Which of the following statement(s) are NOT true?",
-      options: [
-        "A. The target of a message flow may be a task",
-        "B. The source of a message flow may be a task",
-        "C. A message flow can connect a task in a pool to the boundary of another pool",
-        "D. A message flow can connect a task in a pool to another task in the same pool",
-        "E. A message flow may lead to the creation of a data object by the task that receives the message",
-      ],
-      correctAnswers: [3],
-      explanation:
-        "Correct answer: D. A message flow can connect a task in a pool to another task in the same pool",
-    },
   ];
 
   window._BPS301_DATA.push({ study, quiz });
