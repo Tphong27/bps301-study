@@ -1605,23 +1605,6 @@
         "Correct answers (3): A. A choreography activity represents an interaction between two parties | B. A choreography activity can be one-way or two-way | C. A choreography activity captures a unit of work",
     },
     {
-      id: 3100,
-      lectureId: 12,
-      type: "multiple-answer",
-      difficulty: "Hard",
-      question:
-        "Which complementary roles are typically involved in process discovery? (Select 2 answers)",
-      options: [
-        "A. CEO",
-        "B. Process Analyst",
-        "C. Head of Enterprise Architecture",
-        "D. Domain Expert",
-        "E. CIO",
-      ],
-      correctAnswers: [1, 3],
-      explanation: "Correct answers (2): B. Process Analyst | D. Domain Expert",
-    },
-    {
       id: 3101,
       lectureId: 12,
       type: "multiple-answer",
